@@ -38,8 +38,12 @@ include_once("function/UpdateCheck.php");
 
 <body>
     <div class="container">
-        <a href="https://github.com/MarcusIsLion/ProjectPulse" target="_blank" class="UpdateBadge"><img src="https://img.shields.io/badge/ProjectPulse%20has%20a%20new%20update%20available-20B2AA?style=for-the-badgebadge" alt="An update is availible" /></a>
-        <script src="js/UpdateBadgeGestion.js"></script>
+        <?php if (!CheckVersions()) { ?>
+            <a href="https://github.com/MarcusIsLion/ProjectPulse" target="_blank" class="UpdateBadge"><img src="https://img.shields.io/badge/ProjectPulse%20has%20a%20new%20update%20available-20B2AA?style=for-the-badgebadge" alt="An update is availible" /></a>
+            <script src="js/UpdateBadgeGestion.js"></script>
+        <?php
+        }
+        ?>
         <div class="Head">
             <img src="img/Logo.png" width="40px" height="40px" class="LogoTitle" />
             <h1 id="waveText"> <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>P</span><span>u</span><span>l</span><span>s</span><span>e</span></h1>

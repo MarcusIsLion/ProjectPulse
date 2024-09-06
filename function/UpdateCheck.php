@@ -1,9 +1,4 @@
 <?php
-// URL du fichier JSON sur GitHub
-$githubJsonUrl = 'https://raw.githubusercontent.com/MarcusIsLion/ProjectPulse/main/data/version.json';
-
-// Chemin du fichier local version.json
-$localJsonPath = __DIR__ . '/data/version.json';
 
 // Fonction pour récupérer le contenu JSON à partir d'une URL
 function getJsonFromUrl($url)
@@ -25,21 +20,29 @@ function getJsonFromFile($filePath)
     return json_decode($json, true);
 }
 
-try {
-    // Récupération de la version depuis l'URL GitHub
-    $githubData = getJsonFromUrl($githubJsonUrl);
-    $githubVersion = $githubData['version'];
+function CheckVersions()
+{
+    try {
+        // URL du fichier JSON sur GitHub
+        $githubJsonUrl = 'https://raw.githubusercontent.com/MarcusIsLion/ProjectPulse/main/data/version.json';
 
-    // Récupération de la version depuis le fichier local
-    $localData = getJsonFromFile($localJsonPath);
-    $localVersion = $localData['version'];
+        // Chemin du fichier local version.json
+        $localJsonPath = 'data/version.json';
+        // Récupération de la version depuis l'URL GitHub
+        $githubData = getJsonFromUrl($githubJsonUrl);
+        $githubVersion = $githubData['version'];
 
-    // Comparaison des versions
-    if ($githubVersion === $localVersion) {
-        echo "Les versions correspondent : $localVersion";
-    } else {
-        echo "Les versions ne correspondent pas.\nVersion GitHub : $githubVersion\nVersion locale : $localVersion";
+        // Récupération de la version depuis le fichier local
+        $localData = getJsonFromFile($localJsonPath);
+        $localVersion = $localData['version'];
+
+        // Comparaison des versions
+        if ($githubVersion === $localVersion) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $e) {
+        echo "Erreur : " . $e->getMessage();
     }
-} catch (Exception $e) {
-    echo "Erreur : " . $e->getMessage();
 }
