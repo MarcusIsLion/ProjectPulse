@@ -18,6 +18,9 @@ function findLogo($basePath)
 $LanguageIdPopover = 0;
 
 
+include_once("function/UpdateCheck.php");
+
+
 ?>
 
 <!DOCTYPE html>
