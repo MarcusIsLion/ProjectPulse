@@ -13,7 +13,7 @@
         <h1>Please, register informations to create your new project :</h1>
         <div class="Form-Grid-Container">
             <div class="Form-Grid">
-                <form action="post/post_CreateNewProject.php" method="post">
+                <form action="../post/post_CreateNewProject.php" method="post">
                     <label for="projectName">Name of the project :</label>
                     <input type="text" id="projectName" name="projectName" placeholder="Name of the project" required /><br />
                     <label for="projectType">Type of project :</label>
@@ -41,7 +41,7 @@
                 </form>
             </div>
         </div>
-        <a href="index.php">Cancel</a>
+        <a href="../index.php">Cancel</a>
     </div>
 </body>
 
