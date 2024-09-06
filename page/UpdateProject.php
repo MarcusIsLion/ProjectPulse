@@ -18,7 +18,7 @@ $projectName = explode("/", $FullprojectName)[1];
     <div class="container">
         <h1>Modifier les informations de votre projet :</h1>
         <div>
-            <form action="post/post_UpdateProject.php" method="post">
+            <form action="../post/post_UpdateProject.php" method="post">
                 <input type="hidden" name="originalProjectName" value="<?= htmlspecialchars($FullprojectName) ?>" />
                 <input type="hidden" name="projectLanguage" value="<?= json_decode(file_get_contents($FullprojectName . "/type.json"))->language ?>" />
                 <input type="text" name="projectName" placeholder="Nom du projet" value="<?= htmlspecialchars($projectName) ?>" required />
@@ -68,7 +68,7 @@ $projectName = explode("/", $FullprojectName)[1];
                 <input type="submit" value="Mettre à jour le projet" class="button ValidationCreation" />
             </form>
         </div>
-        <a href="index.php">Annuler</a>
+        <a href="../index.php">Annuler</a>
         <a href="post/post_DeleteProject.php?ProjectName=<?= htmlspecialchars($FullprojectName) ?>" class="DeleteButton">Supprimer le projet</a>
     </div>
 </body>

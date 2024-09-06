@@ -27,7 +27,7 @@ $LanguageIdPopover = 0;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProjectPulse : Home</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="img/Logo.png" />
     <link rel="apple-touch-icon" href="img/Logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -94,7 +94,7 @@ $LanguageIdPopover = 0;
                                 </ul>
                                 <div class="CardButtonSection">
                                     <a href="<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Open this project</a>
-                                    <a href="UpdateProject.php?ProjectName=<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Update theses characteristics</a>
+                                    <a href="page/UpdateProject.php?ProjectName=<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Update theses characteristics</a>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ $LanguageIdPopover = 0;
         <div class="BottomButton">
             <div class="StartBottomButton"></div>
             <div class="CenterBottomButton">
-                <a href="CreateNewProject.php" class="button GeneralButton">Create a new project</a>
+                <a href="page/CreateNewProject.php" class="button GeneralButton">Create a new project</a>
 
                 <button class="button SecretManager GeneralButton smooth-link">See hidden projects <i class="fa-solid fa-eye"></i></button>
             </div>
@@ -163,7 +163,7 @@ $LanguageIdPopover = 0;
                                     </ul>
                                     <div class="CardButtonSection">
                                         <a href="<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Open this project</a>
-                                        <a href="UpdateProject.php?ProjectName=<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Update theses characteristics</a>
+                                        <a href="page/UpdateProject.php?ProjectName=<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Update theses characteristics</a>
                                     </div>
                                 </div>
                             </div>
