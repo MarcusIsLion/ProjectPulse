@@ -1,2 +1,2 @@
 # ProjectPulse
-The newest dashboard for xampp and HTDOCS forlder visualisation
+The newest dashboard for xampp and HTDOCS folder visualisation
