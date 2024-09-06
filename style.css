@@ -1,0 +1,432 @@
+/* Style général de la page */
+
+:root {
+    --LinearColor: linear-gradient(
+        to right,
+        rgb(59, 130, 246),
+        rgb(168, 85, 247),
+        #ec4899
+    );
+
+    --DeleteLinearColor: linear-gradient(
+        to right,
+        rgb(255, 0, 0),
+        rgb(255, 0, 0),
+        #ec4899
+    );
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Style du titre principal */
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 span {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    font-family: Arial, sans-serif;
+    color: rgb(59, 130, 246);
+}
+
+@keyframes waveEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 10px;
+}
+
+.LogoTitle {
+    margin-right: 20px;
+}
+
+/* Grille pour les cartes */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Limite à 3 colonnes */
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1160px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr); /* Limite à 2 colonnes */
+    }
+}
+@media screen and (max-width: 1000px) {
+    .card-grid {
+        grid-template-columns: repeat(1, 1fr); /* Limite à 2 colonnes */
+    }
+}
+
+/* Style des cartes d'offres */
+.card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    font-size: 1em;
+}
+
+.logo-background {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+    filter: blur(6px);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    width: 102%;
+    height: 102%;
+}
+
+.CardContent {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    height: 100%;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.card ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card ul li p {
+    width: auto;
+    white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+    margin: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.card ul li::before {
+    content: "✔";
+    color: #8f53ff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Style des prix */
+.card .lastUpdate {
+    font-size: 0.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style des boutons */
+.button {
+    background-color: transparent;
+    color: #8f53ff;
+    border: 2px solid #8f53ff;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #8f53ff;
+    color: #fff;
+}
+
+.GeneralButton {
+    padding: 10px 20px;
+}
+
+/* Style du lien et des questions fréquentes */
+.container a {
+    color: #8f53ff;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.Stoped {
+    color: #ed1f1f;
+}
+
+.Standby {
+    color: #f39c12;
+}
+
+.Development {
+    color: #2ecc71;
+}
+
+.Finished {
+    color: #22eee7;
+}
+
+.CardButtonSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Limite à 2 colonnes */
+    gap: 20px;
+    justify-items: center;
+}
+
+.CardButtonSection a {
+    height: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: bottom;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid black;
+}
+
+#projectState {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid black;
+}
+
+#projectVisual {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid black;
+}
+
+#projectLanguage {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid black;
+}
+
+#projectLanguage option {
+    padding: 10px;
+    font-size: 1em;
+    border-bottom: 1px solid black;
+}
+.ValidationCreation {
+    margin-left: 10px;
+}
+
+.DeleteButton {
+    margin-left: 10px;
+    background-color: transparent;
+    color: #ff5353 !important;
+    border: 2px solid #ff5353;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.DeleteButton:hover {
+    background-color: #ff5353;
+    color: #fff !important;
+}
+
+/* Par défaut, les éléments cachés sont invisibles et leur hauteur est réduite à zéro */
+.secret.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 3s ease-in-out;
+}
+
+/* Les éléments visibles sont entièrement visibles et leur hauteur est auto */
+.secret {
+    opacity: 1;
+    height: auto;
+    transition: all 3s ease-in-out;
+}
+
+.Separator {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #8f53ff;
+}
+
+.Form-Grid-Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Form-Grid {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #8f53ff;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 500px;
+}
+
+.Form-Grid input {
+    margin: 10px;
+}
+
+/* Style pour l'icône */
+.icon-container {
+    display: flex;
+    cursor: pointer;
+    justify-content: right;
+    margin-left: 10px;
+}
+
+/* Style pour le popover */
+.popover {
+    position: absolute;
+    top: 170px; /* Ajuster pour la position au-dessus ou à côté de l'icône */
+    left: 115px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    width: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.AlphaHidden {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+/* Cacher le popover par défaut */
+.hidden {
+    display: none;
+}
+
+/* Ajouter une flèche pour le popover */
+.popover::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+    transition: all 0.3s ease;
+}
+
+.Head {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 5px 0;
+}
+
+.NotButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.BottomButton {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Limite à 2 colonnes */
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.BottomButton a.GithubBadge {
+    display: flex;
+    justify-content: right;
+}
