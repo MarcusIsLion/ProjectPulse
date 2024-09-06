@@ -35,6 +35,8 @@ $LanguageIdPopover = 0;
 
 <body>
     <div class="container">
+        <a href="https://github.com/MarcusIsLion/ProjectPulse" target="_blank" class="UpdateBadge"><img src="https://img.shields.io/badge/ProjectPulse%20has%20a%20new%20update%20available-20B2AA?style=for-the-badgebadge" alt="An update is availible" /></a>
+        <script src="js/UpdateBadgeGestion.js"></script>
         <div class="Head">
             <img src="img/Logo.png" width="40px" height="40px" class="LogoTitle" />
             <h1 id="waveText"> <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>P</span><span>u</span><span>l</span><span>s</span><span>e</span></h1>
@@ -106,14 +108,16 @@ $LanguageIdPopover = 0;
         </div>
 
         <div class="BottomButton">
-            <div class="StartBottomButton"></div>
+            <div class="StartBottomButton">
+                <a href="https://github.com/MarcusIsLion/ProjectPulse/issues/new" target="_blank" class="IssueBadge"><img src="https://img.shields.io/badge/issue-error-red?logo=x-circle" alt="badge to acces to the issue form" /></a>
+            </div>
             <div class="CenterBottomButton">
                 <a href="page/CreateNewProject.php" class="button GeneralButton">Create a new project</a>
 
                 <button class="button SecretManager GeneralButton smooth-link">See hidden projects <i class="fa-solid fa-eye"></i></button>
             </div>
             <div class="EndBottomButton">
-                <a href=" https://github.com/MarcusIsLion" target="_blank" class="GithubBadge"><img src=" https://img.shields.io/badge/GitHub-MarcusIsLion-blue?logo=github" /></a>
+                <a href="https://github.com/MarcusIsLion" target="_blank" class="GithubBadge"><img src="https://img.shields.io/badge/GitHub-MarcusIsLion-blue?logo=github" alt="badge reprensenting the github account of the developper" /></a>
             </div>
         </div>
 
