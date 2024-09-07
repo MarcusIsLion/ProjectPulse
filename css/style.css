@@ -419,9 +419,17 @@ input[type="text"] {
     width: 100%;
 }
 
+.EndBottomButton {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+}
+
 .BottomButton a.GithubBadge {
     display: flex;
     justify-content: right;
+    width: auto;
 }
 
 .BottomButton a.IssueBadge {
