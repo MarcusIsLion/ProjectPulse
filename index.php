@@ -19,6 +19,7 @@ $LanguageIdPopover = 0;
 
 
 include_once("function/UpdateCheck.php");
+$localData = getJsonFromFile("data/version.json");
 
 
 ?>
@@ -31,12 +32,13 @@ include_once("function/UpdateCheck.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProjectPulse : Home</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/theme.css" />
     <link rel="icon" href="img/Logo.png" />
     <link rel="apple-touch-icon" href="img/Logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="<?= $localData["theme"] ?>">
     <div class="container">
         <?php if (!CheckVersions()) { ?>
             <a href="https://github.com/MarcusIsLion/ProjectPulse" target="_blank" class="UpdateBadge"><img src="https://img.shields.io/badge/ProjectPulse%20has%20a%20new%20update%20available-20B2AA?style=for-the-badgebadge" alt="An update is availible" /></a>

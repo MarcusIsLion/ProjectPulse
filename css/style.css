@@ -1,29 +1,12 @@
 /* Style général de la page */
-
-:root {
-    --LinearColor: linear-gradient(
-        to right,
-        rgb(59, 130, 246),
-        rgb(168, 85, 247),
-        #ec4899
-    );
-
-    --DeleteLinearColor: linear-gradient(
-        to right,
-        rgb(255, 0, 0),
-        rgb(255, 0, 0),
-        #ec4899
-    );
-}
-
 * {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: "Arial", sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
+    background-color: var(--background-color-body);
+    color: var(--text-color);
     margin: 0;
     display: flex;
     justify-content: center;
@@ -52,7 +35,7 @@ h1 span {
     display: inline-block;
     transition: transform 0.5s ease;
     font-family: Arial, sans-serif;
-    color: rgb(59, 130, 246);
+    color: var(--primary-blue);
 }
 
 @keyframes waveEffect {
@@ -70,7 +53,7 @@ h1 span {
 h2 {
     font-size: 1.5em;
     font-weight: bold;
-    color: #333;
+    color: var(--black);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,9 +87,9 @@ h2 {
 /* Style des cartes d'offres */
 .card {
     position: relative;
-    background-color: #fff;
+    background-color: var(--card-background-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 20px;
     margin: 10px;
     width: 100%;
@@ -131,7 +114,7 @@ h2 {
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 16px var(--black-low-opacity);
     width: 102%;
     height: 102%;
 }
@@ -148,7 +131,7 @@ h2 {
 
 .card h2 {
     font-size: 1.5em;
-    color: #333;
+    color: var(--black);
     margin-bottom: 20px;
 }
 
@@ -180,7 +163,7 @@ h2 {
 
 .card ul li::before {
     content: "✔";
-    color: #8f53ff;
+    color: var(--primary-purple);
     font-weight: bold;
     margin-right: 10px;
 }
@@ -188,15 +171,15 @@ h2 {
 /* Style des prix */
 .card .lastUpdate {
     font-size: 0.8em;
-    color: #333;
+    color: var(--black);
     margin-bottom: 20px;
 }
 
 /* Style des boutons */
 .button {
     background-color: transparent;
-    color: #8f53ff;
-    border: 2px solid #8f53ff;
+    color: var(--primary-purple);
+    border: 2px solid var(--primary-purple);
     border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -206,8 +189,8 @@ h2 {
 }
 
 .button:hover {
-    background-color: #8f53ff;
-    color: #fff;
+    background-color: var(--primary-purple);
+    color: var(--white);
 }
 
 .GeneralButton {
@@ -216,7 +199,7 @@ h2 {
 
 /* Style du lien et des questions fréquentes */
 .container a {
-    color: #8f53ff;
+    color: var(--primary-purple);
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
@@ -228,19 +211,19 @@ h2 {
 }
 
 .Stoped {
-    color: #ed1f1f;
+    color: var(--stop-color);
 }
 
 .Standby {
-    color: #f39c12;
+    color: var(--standby-color);
 }
 
 .Development {
-    color: #2ecc71;
+    color: var(--development-color);
 }
 
 .Finished {
-    color: #22eee7;
+    color: var(--finished-color);
 }
 
 .CardButtonSection {
@@ -262,21 +245,21 @@ input[type="text"] {
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
-    border: 2px solid black;
+    border: 2px solid var(--black);
 }
 
 #projectState {
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
-    border: 2px solid black;
+    border: 2px solid var(--black);
 }
 
 #projectVisual {
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
-    border: 2px solid black;
+    border: 2px solid var(--black);
 }
 
 #projectLanguage {
@@ -284,13 +267,13 @@ input[type="text"] {
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
-    border: 2px solid black;
+    border: 2px solid var(--black);
 }
 
 #projectLanguage option {
     padding: 10px;
     font-size: 1em;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--black);
 }
 .ValidationCreation {
     margin-left: 10px;
@@ -299,8 +282,8 @@ input[type="text"] {
 .DeleteButton {
     margin-left: 10px;
     background-color: transparent;
-    color: #ff5353 !important;
-    border: 2px solid #ff5353;
+    color: var(--delete-button-color) !important;
+    border: 2px solid var(--delete-button-color);
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 1em;
@@ -309,8 +292,8 @@ input[type="text"] {
 }
 
 .DeleteButton:hover {
-    background-color: #ff5353;
-    color: #fff !important;
+    background-color: var(--delete-button-color);
+    color: var(--white) !important;
 }
 
 /* Par défaut, les éléments cachés sont invisibles et leur hauteur est réduite à zéro */
@@ -331,7 +314,7 @@ input[type="text"] {
 .Separator {
     margin-top: 20px;
     margin-bottom: 20px;
-    border-bottom: 3px solid #8f53ff;
+    border-bottom: 3px solid var(--primary-purple);
 }
 
 .Form-Grid-Container {
@@ -345,9 +328,9 @@ input[type="text"] {
 .Form-Grid {
     display: flex;
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 10px;
-    border: 2px solid #8f53ff;
+    border: 2px solid var(--primary-purple);
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -372,11 +355,11 @@ input[type="text"] {
     top: 170px; /* Ajuster pour la position au-dessus ou à côté de l'icône */
     left: 115px;
     padding: 10px;
-    background-color: #333;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     border-radius: 5px;
     width: auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px var(--black-low-opacity);
     z-index: 10;
     transition: all 0.3s ease;
 }
@@ -398,7 +381,7 @@ input[type="text"] {
     left: 20px;
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent #333 transparent;
+    border-color: transparent transparent var(--black) transparent;
     transition: all 0.3s ease;
 }
 
@@ -441,13 +424,13 @@ input[type="text"] {
     top: 2%; /* Position verticale, centré */
     right: -240px; /* On positionne la balise hors de l'écran (à droite) */
     transform: translateY(-50%); /* On centre la balise verticalement */
-    background-color: #ff5722; /* Couleur de fond */
-    color: white; /* Couleur du texte */
+    background-color: var(--update-badge-color);
+    color: var(--white);
     padding: 10px 10px; /* Espacement intérieur */
     text-decoration: none; /* Supprime le soulignement du lien */
     font-size: 16px; /* Taille de la police */
     border-radius: 5px; /* Bordures arrondies */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    box-shadow: 0px 4px 6px var(--black-low-opacity); /* Légère ombre */
     transition: right 0.5s ease; /* Animation de transition fluide */
     z-index: 3;
 }
@@ -461,4 +444,12 @@ input[type="text"] {
 /* Animation pour faire apparaître l'élément */
 .UpdateBadge:hover {
     right: 0px; /* La balise glisse à 20px du bord droit de l'écran */
+}
+
+.popover-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    color: var(--black);
 }

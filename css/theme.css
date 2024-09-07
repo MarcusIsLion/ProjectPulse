@@ -1,0 +1,46 @@
+:root {
+    --LinearColor: linear-gradient(
+        to right,
+        rgb(59, 130, 246),
+        rgb(168, 85, 247),
+        #ec4899
+    );
+
+    --background-color-body: #f5f7fa;
+    --card-background-color: #fff;
+    --text-color: #333;
+    --primary-blue: rgb(59, 130, 246);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --primary-purple: #8f53ff;
+    --delete-button-color: #ff5353;
+    --stop-color: #ed1f1f;
+    --standby-color: #f39c12;
+    --development-color: #2ecc71;
+    --finished-color: #22eee7;
+    --update-badge-color: #ff5722;
+
+    /* standard colors : */
+    --white: #fff;
+    --black: #000;
+    --black-low-opacity: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+    --background-color-body: #333;
+    --card-background-color: #272727;
+    --text-color: #fff;
+    --primary-blue: rgb(59, 130, 246);
+    --shadow-color: rgba(255, 255, 255, 0.3);
+    --primary-purple: #8f53ff;
+    --delete-button-color: #ff5353;
+    --stop-color: #ed1f1f;
+    --standby-color: #f39c12;
+    --development-color: #2ecc71;
+    --finished-color: #22eee7;
+    --update-badge-color: #ff5722;
+
+    /* standard colors : */
+    --black: #fff;
+    --white: #000;
+    --black-low-opacity: rgba(255, 255, 255, 0.1);
+}
