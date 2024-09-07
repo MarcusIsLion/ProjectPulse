@@ -1,9 +1,11 @@
 <?php
-$FullprojectName = $_GET['ProjectName'];
+$FullprojectName = "../" . $_GET['ProjectName'];
 // je sépare le text Website/ du nom du projet
 $projectName = explode("/", $FullprojectName)[1];
-
+include_once("../function/UpdateCheck.php");
+$localData = getJsonFromFile("../data/version.json");
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,10 +13,11 @@ $projectName = explode("/", $FullprojectName)[1];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modifier le projet local</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
 </head>
 
-<body>
+<body class="<?= $localData["theme"] ?>">
     <div class="container">
         <h1>Modifier les informations de votre projet :</h1>
         <div>

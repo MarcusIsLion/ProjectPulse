@@ -1,3 +1,8 @@
+<?php
+include_once("../function/UpdateCheck.php");
+$localData = getJsonFromFile("../data/version.json");
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,10 +10,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Créer un nouveau projet local</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
 </head>
 
-<body>
+<body class="<?= $localData["theme"] ?>">
     <div class="container">
         <h1>Please, register informations to create your new project :</h1>
         <div class="Form-Grid-Container">
