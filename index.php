@@ -175,6 +175,14 @@ $localData = getJsonFromFile("data/version.json");
                                         </li>
                                         <li>
                                             <p>Type : <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->type ?></p>
+                                            <div class="icon-container">
+                                                <!-- Icône Font Awesome -->
+                                                <button onclick="afficherPopover(<?= 'LanguageIdPopover' . $LanguageIdPopover ?>)" class="NotButton"><i class="fas fa-info-circle popover-icon"></i></button>
+                                                <!-- Popover -->
+                                                <div class="popover hidden" id="<?= 'LanguageIdPopover' . $LanguageIdPopover ?>">
+                                                    <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->language ?>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li class=" <?= htmlspecialchars($state, ENT_QUOTES) ?>">
                                             <p>State : <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->state ?></p>
