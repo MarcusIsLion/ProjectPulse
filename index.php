@@ -118,6 +118,12 @@ $localData = getJsonFromFile("data/version.json");
 
         <div class="BottomButton">
             <div class="StartBottomButton">
+                <form action="post/post_ChangeTheme.php" method="post">
+                    <select name="theme" id="theme" class="SelectTheme" onchange="this.form.submit()">
+                        <option value="light" <?= $localData["theme"] == "light" ? "selected" : "" ?>>Light</option>
+                        <option value="dark" <?= $localData["theme"] == "dark" ? "selected" : "" ?>>Dark</option>
+                    </select>
+                </form>
                 <a href="https://github.com/MarcusIsLion/ProjectPulse/issues/new" target="_blank" class="IssueBadge"><img src="https://img.shields.io/badge/issue-error-red?logo=x-circle" alt="badge to acces to the issue form" /></a>
             </div>
             <div class="CenterBottomButton">
