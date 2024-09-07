@@ -5,7 +5,7 @@ $projectType = $_POST["projectType"];
 $projectLanguage = $_POST["projectLanguage"];
 
 // Define the path of the project directory
-$projectDirectory = '../Website/' . $projectName;
+$projectDirectory = '../Projects/' . $projectName;
 
 // Check if the project directory doesn't exist
 if (!is_dir($projectDirectory)) {
@@ -31,5 +31,5 @@ if (!is_dir($projectDirectory)) {
 }
 
 // Redirect to the project page
-header('Location: ../Website/' . $projectName);
+header('Location: ../Projects/' . $projectName);
 exit;

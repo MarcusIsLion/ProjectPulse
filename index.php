@@ -56,13 +56,13 @@ $localData = getJsonFromFile("data/version.json");
 
         <div class="card-grid">
             <?php
-            $dossiers = scandir("Website/");
+            $dossiers = scandir("Projects/");
 
             foreach ($dossiers as $dossier) {
                 $LanguageIdPopover++;
-                $chemin_complet = "Website/" . $dossier;
+                $chemin_complet = "Projects/" . $dossier;
                 if (is_dir($chemin_complet) && $dossier != "." && $dossier != ".." && $dossier != "post") {
-                    $visual = json_decode(file_get_contents("Website/" . $dossier . "/type.json"))->visual;
+                    $visual = json_decode(file_get_contents("Projects/" . $dossier . "/type.json"))->visual;
                     if ($visual != "hidden") {
                         $state = json_decode(file_get_contents($chemin_complet . "/type.json"))->state;
 
@@ -143,12 +143,12 @@ $localData = getJsonFromFile("data/version.json");
 
             <div class="card-grid">
                 <?php
-                $dossiers = scandir("Website/");
+                $dossiers = scandir("Projects/");
                 foreach ($dossiers as $dossier) {
                     $LanguageIdPopover++;
-                    $chemin_complet = "Website/" . $dossier;
+                    $chemin_complet = "Projects/" . $dossier;
                     if (is_dir($chemin_complet) && $dossier != "." && $dossier != ".." && $dossier != "post") {
-                        $visual = json_decode(file_get_contents("Website/" . $dossier . "/type.json"))->visual;
+                        $visual = json_decode(file_get_contents("Projects/" . $dossier . "/type.json"))->visual;
                         if ($visual == "hidden") {
                             $state = json_decode(file_get_contents($chemin_complet . "/type.json"))->state;
 

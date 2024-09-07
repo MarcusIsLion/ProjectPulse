@@ -10,7 +10,7 @@ $projectLanguage = $_POST["projectLanguage"];
 
 // Define the path of the project directory
 $originalDirectory = '../' . $originalProjectName;
-$newDirectory = '../Website/' . $projectName;
+$newDirectory = '../Projects/' . $projectName;
 
 ///<summary>
 /// Delete a directory and its content
