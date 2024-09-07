@@ -1,18 +1,18 @@
 <?php
-// Récupérer les valeurs du formulaire POST
+// Get the project name, type and language from the form by POST method
 $projectName = $_POST["projectName"];
 $projectType = $_POST["projectType"];
 $projectLanguage = $_POST["projectLanguage"];
 
-// Définir le chemin du nouveau dossier
-$projectDirectory = '../Website/' . $projectName;
+// Define the path of the project directory
+$projectDirectory = '../Projects/' . $projectName;
 
-// Vérifier si le dossier n'existe pas déjà
+// Check if the project directory doesn't exist
 if (!is_dir($projectDirectory)) {
-    // Créer le dossier avec les permissions appropriées (0777 pour lecture, écriture, exécution)
+    // Create the directory with the appropriate permissions (0777 for read, write, execute)
     mkdir($projectDirectory, 0777, true);
 
-    // Contenu du fichier JSON
+    // Content of the type.json file
     $data = [
         "type" => $projectType,
         "state" => "Development",
@@ -20,16 +20,16 @@ if (!is_dir($projectDirectory)) {
         "language" => $projectLanguage
     ];
 
-    // Encodage du contenu en JSON
+    // Encode the data in JSON format
     $jsonContent = json_encode($data, JSON_PRETTY_PRINT);
 
-    // Chemin complet pour le fichier type.json
+    // Path of the type.json file
     $jsonFilePath = $projectDirectory . '/type.json';
 
-    // Créer et écrire dans le fichier type.json
+    // Create the type.json file with the JSON content
     file_put_contents($jsonFilePath, $jsonContent);
 }
 
-// Rediriger l'utilisateur vers index.php
-header('Location: ../Website/' . $projectName);
+// Redirect to the project page
+header('Location: ../Projects/' . $projectName);
 exit;

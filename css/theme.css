@@ -1,11 +1,5 @@
 :root {
-    --LinearColor: linear-gradient(
-        to right,
-        rgb(59, 130, 246),
-        rgb(168, 85, 247),
-        #ec4899
-    );
-
+    /* standard colors for elements : */
     --background-color-body: #f5f7fa;
     --card-background-color: #fff;
     --text-color: #333;
@@ -18,14 +12,18 @@
     --development-color: #2ecc71;
     --finished-color: #22eee7;
     --update-badge-color: #ff5722;
+    /* end of standard colors for elements */
 
     /* standard colors : */
     --white: #fff;
     --black: #000;
     --black-low-opacity: rgba(0, 0, 0, 0.1);
+    /* end of standard colors */
 }
 
+/* dark theme */
 .dark {
+    /* standard colors for elements : */
     --background-color-body: #333;
     --card-background-color: #272727;
     --text-color: #fff;
@@ -38,9 +36,11 @@
     --development-color: #2ecc71;
     --finished-color: #22eee7;
     --update-badge-color: #ff5722;
+    /* end of standard colors for elements */
 
     /* standard colors : */
     --black: #fff;
     --white: #000;
     --black-low-opacity: rgba(255, 255, 255, 0.1);
+    /* end of standard colors */
 }
