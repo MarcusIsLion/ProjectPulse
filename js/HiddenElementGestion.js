@@ -1,7 +1,11 @@
-// code js qui permet d'alterner entre cet élément : "<i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash"></i>" et celui-ci : <i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye-slash"></i> lorsqu'ils sont cliqués et retirer la class CSS "hidden" des élements qui la possède dans la page
-const button = document.getElementsByClassName("SecretManager")[0];
+// This script is used to manage the hidden elements of the page
 
-// Fonction qui permet de changer l'icone de l'oeil
+const button = document.getElementsByClassName("SecretManager")[0]; // Get the first element with the class "SecretManager"
+
+///<summary>
+/// Function that changes the icon of the button
+///</summary>
+///<param name="icone">The icon to change</param>
 function changeIcone(icone) {
     if (icone.classList.contains("fa-eye")) {
         button.innerText = "Hide hidden projects ";
@@ -16,7 +20,9 @@ function changeIcone(icone) {
     }
 }
 
-// Fonction qui permet de toggle la class "hidden" des éléments qui la possède
+///<summary>
+/// Function that manages the hidden class of the elements
+///</summary>
 function ManageHiddenClass() {
     let elements = document.getElementsByClassName("secret");
     for (let i = 0; i < elements.length; i++) {
@@ -24,10 +30,8 @@ function ManageHiddenClass() {
     }
 }
 
-// j'ajoute un écouteur d'événement sur le document pour écouter les clics sur les boutons ayant la class "SecretManager"
-// document.addEventListener("click", function (event) {
+// Add an event listener to the button
 button.addEventListener("click", function (event) {
-    // let button = event.target.closest(".SecretManager");
     if (button) {
         let icone = button.getElementsByTagName("i")[0];
         changeIcone(icone);

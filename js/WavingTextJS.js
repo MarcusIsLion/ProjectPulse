@@ -1,17 +1,23 @@
-const h1 = document.querySelector("#waveText");
-const text = h1.textContent;
-let animationInProgress = false;
-h1.innerHTML = ""; // On vide le texte de la balise <h1>
+// This script is used to manage the waving text effect on the home page
 
+const h1 = document.querySelector("#waveText"); // Get the first element with the id "waveText"
+const text = h1.textContent; // Get the text content of the element
+let animationInProgress = false; // Variable to check if the animation is in progress
+h1.innerHTML = ""; // Empty the element
+
+// Manage span for each letter of the text
 for (let i = 0; i < text.length; i++) {
     const span = document.createElement("span");
     span.textContent = text[i];
-    span.style.transitionDelay = `${i * 50}ms`; // Ajout d'un délai pour chaque lettre
+    span.style.transitionDelay = `${i * 50}ms`; // Adding a delay to the transition
     h1.appendChild(span);
 }
 
+///<summary>
+/// Function that starts the animation
+///</summary>
 function startAnimation() {
-    if (animationInProgress) return; // Empêche l'animation si elle est déjà en cours ou bloquée
+    if (animationInProgress) return; // If the animation is in progress, return
 
     const spans = h1.querySelectorAll("span");
     spans.forEach((span, index) => {
@@ -19,17 +25,17 @@ function startAnimation() {
         span.style.animation = `waveEffect 0.5s ease ${index * 0.05}s`;
     });
 
-    // Empêche de rejouer l'animation pendant 5 secondes
+    // Block the animation for the duration of the animation
     animationInProgress = true;
 
-    // Réinitialiser après 1 seconde (durée de l'animation max)
+    // Reset the animation after 1 second
     setTimeout(() => {
         spans.forEach((span) => {
-            span.style.animation = ""; // Réinitialisation de l'animation
+            span.style.animation = ""; // Reset the animation
         });
     }, 1000);
 
-    // Réautorise l'animation après 5 secondes
+    // Allow the animation to be launched again after 1.1 seconds
     setTimeout(() => {
         animationInProgress = false;
     }, 1100);
