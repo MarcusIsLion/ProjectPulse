@@ -1,4 +1,5 @@
 <?php
+// Change the theme
 if (isset($_POST['theme'])) {
     $theme = $_POST['theme'];
     $data = file_get_contents("../data/version.json");

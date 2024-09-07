@@ -1,38 +1,41 @@
 <?php
-// je recois par le get le nom du dossier à supprimer en concaténant ../ et $_GET['ProjectName']
-
+///<sumary>
+/// Delete a directory and its content
+///</sumary>
+///<param name="$dir">The path of the directory to delete</param>
+///<returns>True if the directory has been deleted, false otherwise</returns>
 function deleteDirectory($dir)
 {
     if (!is_dir($dir)) {
-        return false; // Si ce n'est pas un répertoire, on quitte.
+        return false; // If we can't find the directory, we can't delete it.
     }
 
-    // Ouvrir le répertoire.
+    // Open the directory
     $items = scandir($dir);
     foreach ($items as $item) {
         if ($item == '.' || $item == '..') {
-            continue; // Ignorer les répertoires '.' et '..'.
+            continue; // Ignore the special directories
         }
 
         $path = $dir . DIRECTORY_SEPARATOR . $item;
 
         if (is_dir($path)) {
-            // Si c'est un sous-répertoire, on le supprime récursivement.
+            // If it's a directory, we call the function recursively
             deleteDirectory($path);
         } else {
-            // Sinon, on supprime le fichier.
+            // If it's a file, we delete it
             unlink($path);
         }
     }
 
-    // Après avoir supprimé tous les fichiers et sous-répertoires, on peut supprimer le répertoire.
+    // After deleting all the content, we can delete the directory
     return rmdir($dir);
 }
 
-// Exemple d'utilisation
+// Getting the path of the project directory
 $directory = '../' . $_GET['ProjectName'];
 deleteDirectory($directory);
 
-// je redirige l'utilisateur vers index.php
+// Redirect to the home page
 header('Location: ../index.php');
 exit;
