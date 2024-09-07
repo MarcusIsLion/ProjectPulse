@@ -1,4 +1,4 @@
-/* Style général de la page */
+/* General style of the page */
 * {
     scroll-behavior: smooth;
 }
@@ -14,15 +14,24 @@ body {
     min-height: 100vh;
 }
 
-.container {
-    width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    margin: auto;
-    text-align: center;
+.hidden {
+    display: none;
+}
+/* End of general style of the page */
+
+/* Style of the main title */
+.Head {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 5px 0;
 }
 
-/* Style du titre principal */
+.LogoTitle {
+    margin-right: 20px;
+}
+
 h1 {
     font-size: 2em;
     font-weight: bold;
@@ -38,6 +47,7 @@ h1 span {
     color: var(--primary-blue);
 }
 
+/* Animation for the main title */
 @keyframes waveEffect {
     0% {
         transform: scale(1);
@@ -59,15 +69,34 @@ h2 {
     align-items: center;
     margin: 0 0 0 10px;
 }
+/* End of the style of the main title */
 
-.LogoTitle {
-    margin-right: 20px;
+/* Style of the container */
+.container {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: auto;
+    text-align: center;
 }
 
-/* Grille pour les cartes */
+.container a {
+    color: var(--primary-purple);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+/* End of the style of the container */
+
+/* Style for card */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Limite à 3 colonnes */
+    grid-template-columns: repeat(3, 1fr); /* Limited at 3 columns */
     gap: 20px;
     justify-items: center;
     margin-bottom: 30px;
@@ -75,16 +104,15 @@ h2 {
 
 @media screen and (max-width: 1160px) {
     .card-grid {
-        grid-template-columns: repeat(2, 1fr); /* Limite à 2 colonnes */
+        grid-template-columns: repeat(2, 1fr); /* Limited at 2 columns */
     }
 }
 @media screen and (max-width: 1000px) {
     .card-grid {
-        grid-template-columns: repeat(1, 1fr); /* Limite à 2 colonnes */
+        grid-template-columns: repeat(1, 1fr); /* Limited at 1 columns */
     }
 }
 
-/* Style des cartes d'offres */
 .card {
     position: relative;
     background-color: var(--card-background-color);
@@ -101,6 +129,7 @@ h2 {
     font-size: 1em;
 }
 
+/* Logo place at the background of the card */
 .logo-background {
     position: absolute;
     width: 90%;
@@ -119,6 +148,7 @@ h2 {
     height: 102%;
 }
 
+/* Style of the content of the card */
 .CardContent {
     z-index: 2;
     position: relative;
@@ -156,7 +186,7 @@ h2 {
 
 .card ul li p {
     width: auto;
-    white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+    white-space: nowrap;
     margin: 0;
     transition: all 0.5s ease-in-out;
 }
@@ -168,46 +198,10 @@ h2 {
     margin-right: 10px;
 }
 
-/* Style des prix */
 .card .lastUpdate {
     font-size: 0.8em;
     color: var(--black);
     margin-bottom: 20px;
-}
-
-/* Style des boutons */
-.button {
-    background-color: transparent;
-    color: var(--primary-purple);
-    border: 2px solid var(--primary-purple);
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    background-color: var(--primary-purple);
-    color: var(--white);
-}
-
-.GeneralButton {
-    padding: 10px 20px;
-}
-
-/* Style du lien et des questions fréquentes */
-.container a {
-    color: var(--primary-purple);
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 0.9em;
-}
-
-.container a:hover {
-    text-decoration: underline;
 }
 
 .Stoped {
@@ -241,6 +235,39 @@ h2 {
     align-items: center;
 }
 
+.icon-container {
+    display: flex;
+    cursor: pointer;
+    justify-content: right;
+    margin-left: 10px;
+}
+
+/* End of the style of the content of the card */
+
+/* Style of buttons */
+.button {
+    background-color: transparent;
+    color: var(--primary-purple);
+    border: 2px solid var(--primary-purple);
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-purple);
+    color: var(--white);
+}
+
+.GeneralButton {
+    padding: 10px 20px;
+}
+/* End of the style of buttons */
+
+/* Style of the creation project form */
 input[type="text"] {
     padding: 10px;
     border-radius: 5px;
@@ -270,51 +297,8 @@ input[type="text"] {
     border: 2px solid var(--black);
 }
 
-#projectLanguage option {
-    padding: 10px;
-    font-size: 1em;
-    border-bottom: 1px solid var(--black);
-}
 .ValidationCreation {
     margin-left: 10px;
-}
-
-.DeleteButton {
-    margin-left: 10px;
-    background-color: transparent;
-    color: var(--delete-button-color) !important;
-    border: 2px solid var(--delete-button-color);
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.DeleteButton:hover {
-    background-color: var(--delete-button-color);
-    color: var(--white) !important;
-}
-
-/* Par défaut, les éléments cachés sont invisibles et leur hauteur est réduite à zéro */
-.secret.hidden {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: all 3s ease-in-out;
-}
-
-/* Les éléments visibles sont entièrement visibles et leur hauteur est auto */
-.secret {
-    opacity: 1;
-    height: auto;
-    transition: all 3s ease-in-out;
-}
-
-.Separator {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-bottom: 3px solid var(--primary-purple);
 }
 
 .Form-Grid-Container {
@@ -340,19 +324,54 @@ input[type="text"] {
 .Form-Grid input {
     margin: 10px;
 }
+/* End of the style of the creation project form */
 
-/* Style pour l'icône */
-.icon-container {
-    display: flex;
-    cursor: pointer;
-    justify-content: right;
+/* Style of the update project form */
+.DeleteButton {
     margin-left: 10px;
+    background-color: transparent;
+    color: var(--delete-button-color) !important;
+    border: 2px solid var(--delete-button-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Style pour le popover */
+.DeleteButton:hover {
+    background-color: var(--delete-button-color);
+    color: var(--white) !important;
+}
+/* End of the style of the update project form */
+
+/* Style of the secret part */
+.secret {
+    opacity: 1;
+    height: auto;
+    transition: all 3s ease-in-out;
+}
+
+.secret.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 3s ease-in-out;
+}
+/* End of the style of the secret part */
+
+/* Style of all separators */
+.Separator {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--primary-purple);
+}
+/* End of the style of all separators */
+
+/* Style for the popover */
 .popover {
     position: absolute;
-    top: 170px; /* Ajuster pour la position au-dessus ou à côté de l'icône */
+    top: 170px;
     left: 115px;
     padding: 10px;
     background-color: var(--black);
@@ -364,16 +383,6 @@ input[type="text"] {
     transition: all 0.3s ease;
 }
 
-.AlphaHidden {
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-/* Cacher le popover par défaut */
-.hidden {
-    display: none;
-}
-
-/* Ajouter une flèche pour le popover */
 .popover::after {
     content: "";
     position: absolute;
@@ -385,14 +394,6 @@ input[type="text"] {
     transition: all 0.3s ease;
 }
 
-.Head {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0 5px 0;
-}
-
 .NotButton {
     background-color: transparent;
     border: none;
@@ -401,9 +402,19 @@ input[type="text"] {
     align-items: center;
 }
 
+.popover-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    color: var(--black);
+}
+/* End of the style for the popover */
+
+/* Style for the bottom button on the page */
 .BottomButton {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Limite à 2 colonnes */
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     margin-top: 20px;
     width: 100%;
@@ -418,20 +429,22 @@ input[type="text"] {
     display: flex;
     justify-content: left;
 }
+/* End of the style for the bottom button on the page */
 
+/* Style for the update badge */
 .UpdateBadge {
-    position: fixed; /* On fixe la position par rapport à la fenêtre */
-    top: 2%; /* Position verticale, centré */
-    right: -240px; /* On positionne la balise hors de l'écran (à droite) */
-    transform: translateY(-50%); /* On centre la balise verticalement */
+    position: fixed;
+    top: 2%;
+    right: -240px;
+    transform: translateY(-50%);
     background-color: var(--update-badge-color);
     color: var(--white);
-    padding: 10px 10px; /* Espacement intérieur */
-    text-decoration: none; /* Supprime le soulignement du lien */
-    font-size: 16px; /* Taille de la police */
-    border-radius: 5px; /* Bordures arrondies */
-    box-shadow: 0px 4px 6px var(--black-low-opacity); /* Légère ombre */
-    transition: right 0.5s ease; /* Animation de transition fluide */
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px var(--black-low-opacity);
+    transition: right 0.5s ease;
     z-index: 3;
 }
 
@@ -441,19 +454,12 @@ input[type="text"] {
     align-items: center;
 }
 
-/* Animation pour faire apparaître l'élément */
 .UpdateBadge:hover {
-    right: 0px; /* La balise glisse à 20px du bord droit de l'écran */
+    right: 0px;
 }
+/* End of the style for the update badge */
 
-.popover-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    color: var(--black);
-}
-
+/* Style for the button (left side of the bottom button) */
 .StartBottomButton {
     display: flex;
     justify-content: left;
@@ -477,3 +483,4 @@ input[type="text"] {
     color: var(--text-color);
     border: 2px solid var(--black);
 }
+/* End of the style for the button (left side of the bottom button) */
