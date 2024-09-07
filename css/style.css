@@ -25,7 +25,6 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px 0 5px 0;
 }
 
 .LogoTitle {
@@ -330,7 +329,7 @@ input[type="text"] {
 .DeleteButton {
     margin-left: 10px;
     background-color: transparent;
-    color: var(--delete-button-color) !important;
+    color: var(--white) !important;
     border: 2px solid var(--delete-button-color);
     border-radius: 5px;
     padding: 10px 20px;
