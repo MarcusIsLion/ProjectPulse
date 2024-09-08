@@ -45,6 +45,14 @@ $localData = getJsonFromFile("data/version.json");
             <script src="js/UpdateBadgeGestion.js"></script>
         <?php
         }
+        if (isset($_GET['GitFolder'])) {
+        ?>
+            <div class="alterbox">
+                <p>During the suppression of your project, a ".git" folder has been found, and can't be delete by this programme. Please do it manualy.</p>
+                <a href="index.php"><i class="fa-solid fa-close"></i></a>
+            </div>
+        <?php
+        }
         ?>
         <div class="Head">
             <img src="img/Logo.png" width="40px" height="40px" class="LogoTitle" />

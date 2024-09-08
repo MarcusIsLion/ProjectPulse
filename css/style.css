@@ -491,3 +491,22 @@ input[type="text"] {
     border: 2px solid var(--black);
 }
 /* End of the style for the button (left side of the bottom button) */
+
+/* Style for the alert box */
+.alterbox {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--red);
+    color: var(--text-color);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.alterbox a {
+    color: var(--text-color);
+    margin: 20px;
+    background-color: transparent;
+    border: none;
+}
+/* End style for the alert box */
