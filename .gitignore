@@ -1,2 +1,2 @@
-Projects/*
-!Projects/.gitignore
+/Projects/*
+!/Projects/.gitignore
