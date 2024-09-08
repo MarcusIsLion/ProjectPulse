@@ -329,7 +329,7 @@ input[type="text"] {
 .DeleteButton {
     margin-left: 10px;
     background-color: transparent;
-    color: var(--white) !important;
+    color: var(--black) !important;
     border: 2px solid var(--delete-button-color);
     border-radius: 5px;
     padding: 10px 20px;
@@ -340,7 +340,7 @@ input[type="text"] {
 
 .DeleteButton:hover {
     background-color: var(--delete-button-color);
-    color: var(--white) !important;
+    color: var(--black) !important;
 }
 /* End of the style of the update project form */
 
