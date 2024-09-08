@@ -72,7 +72,7 @@ $localData = getJsonFromFile("../data/version.json");
             </form>
         </div>
         <a href="../index.php">Annuler</a>
-        <a href="post/post_DeleteProject.php?ProjectName=<?= htmlspecialchars($FullprojectName) ?>" class="DeleteButton">Supprimer le projet</a>
+        <a href="../post/post_DeleteProject.php?ProjectName=<?= htmlspecialchars($FullprojectName) ?>" class="DeleteButton">Supprimer le projet</a>
     </div>
 </body>
 

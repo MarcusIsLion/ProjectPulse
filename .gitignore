@@ -2,4 +2,4 @@
 Projects/*
 
 # Ne pas ignorer le dossier Project lui-même
-!Projects/
+!Projects/.gitkeep

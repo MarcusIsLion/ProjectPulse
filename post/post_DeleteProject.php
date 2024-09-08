@@ -33,7 +33,7 @@ function deleteDirectory($dir)
 }
 
 // Getting the path of the project directory
-$directory = '../' . $_GET['ProjectName'];
+$directory = $_GET['ProjectName'];
 deleteDirectory($directory);
 
 // Redirect to the home page
