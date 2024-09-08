@@ -1,4 +1,7 @@
 <?php
+
+$gitfolder = false; // indicate if a git folder is found.
+
 ///<sumary>
 /// Delete a directory and its content
 ///</sumary>
@@ -15,6 +18,10 @@ function deleteDirectory($dir)
     foreach ($items as $item) {
         if ($item == '.' || $item == '..') {
             continue; // Ignore the special directories
+        }
+
+        if ($item == '.git') {
+            $gitfolder = true;
         }
 
         $path = $dir . DIRECTORY_SEPARATOR . $item;
@@ -37,5 +44,9 @@ $directory = $_GET['ProjectName'];
 deleteDirectory($directory);
 
 // Redirect to the home page
-header('Location: ../index.php');
+if ($gitfolder) {
+    header('Location: ../index.php?GitFolder=True');
+} else {
+    header('Location: ../index.php');
+}
 exit;
