@@ -19,6 +19,7 @@ $LanguageIdPopover = 0;
 
 
 include_once("function/UpdateCheck.php");
+include_once("function/InternetConnectionCheck.php");
 $localData = getJsonFromFile("data/version.json");
 
 
@@ -40,13 +41,16 @@ $localData = getJsonFromFile("data/version.json");
 
 <body class="<?= $localData["theme"] ?>">
     <div class="container">
-        <?php if (!CheckVersions()) { ?>
-            <a href="https://github.com/MarcusIsLion/ProjectPulse" target="_blank" class="UpdateBadge"><img src="https://img.shields.io/badge/ProjectPulse%20has%20a%20new%20update%20available-20B2AA?style=for-the-badgebadge" alt="An update is availible" /></a>
-            <script src="js/UpdateBadgeGestion.js"></script>
         <?php
+        if (isInternetAvailable()) {
+            if (!CheckVersions()) { ?>
+                <a href="https://github.com/MarcusIsLion/ProjectPulse" target="_blank" class="UpdateBadge"><img src="https://img.shields.io/badge/ProjectPulse%20has%20a%20new%20update%20available-20B2AA?style=for-the-badgebadge" alt="An update is availible" /></a>
+                <script src="js/UpdateBadgeGestion.js"></script>
+            <?php
+            }
         }
         if (isset($_GET['GitFolder'])) {
-        ?>
+            ?>
             <div class="alterbox">
                 <p>During the suppression of your project, a ".git" folder has been found, and can't be delete by this programme. Please do it manualy.</p>
                 <a href="index.php"><i class="fa-solid fa-close"></i></a>
@@ -132,7 +136,11 @@ $localData = getJsonFromFile("data/version.json");
                         <option value="dark" <?= $localData["theme"] == "dark" ? "selected" : "" ?>>Dark</option>
                     </select>
                 </form>
-                <a href="https://github.com/MarcusIsLion/ProjectPulse/issues/new" target="_blank" class="IssueBadge"><img src="https://img.shields.io/badge/issue-error-red?logo=x-circle" alt="badge to acces to the issue form" /></a>
+                <?php if (isInternetAvailable()) { ?>
+                    <a href="https://github.com/MarcusIsLion/ProjectPulse/issues/new" target="_blank" class="IssueBadge"><img src="https://img.shields.io/badge/issue-error-red?logo=x-circle" alt="badge to acces to the issue form" /></a>
+                <?php
+                }
+                ?>
             </div>
             <div class="CenterBottomButton">
                 <a href="page/CreateNewProject.php" class="button GeneralButton">Create a new project</a>
@@ -140,7 +148,11 @@ $localData = getJsonFromFile("data/version.json");
                 <button class="button SecretManager GeneralButton smooth-link">See hidden projects <i class="fa-solid fa-eye"></i></button>
             </div>
             <div class="EndBottomButton">
-                <a href="https://github.com/MarcusIsLion" target="_blank" class="GithubBadge"><img src="https://img.shields.io/badge/GitHub-MarcusIsLion-blue?logo=github" alt="badge reprensenting the github account of the developper" /></a>
+                <?php if (isInternetAvailable()) { ?>
+                    <a href="https://github.com/MarcusIsLion" target="_blank" class="GithubBadge"><img src="https://img.shields.io/badge/GitHub-MarcusIsLion-blue?logo=github" alt="badge reprensenting the github account of the developper" /></a>
+                <?php
+                }
+                ?>
             </div>
         </div>
 
