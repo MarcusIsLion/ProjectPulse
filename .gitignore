@@ -1,5 +1,1 @@
-# Ignorer tout dans le dossier Project
-Projects/*
-
-# Ne pas ignorer le dossier Project lui-même
-!Projects/.gitkeep
+/Project
