@@ -26,22 +26,14 @@ $localData = getJsonFromFile("../data/version.json");
                     <input type="text" id="projectType" name=" projectType" placeholder="Type of the project" required /><br />
                     <label for="projectLanguage">Language of the project :</label>
                     <select name="projectLanguage" id="projectLanguage">
-                        <option value="HTMLCSSJS">HTML CSS JS</option>
-                        <option value="NativePHP">Native PHP</option>
-                        <option value="SymphoniePHP">PHP and Symphonie</option>
-                        <option value="DockerSymphoniePHP">PHP, Symphonie and Docker</option>
-                        <option value="LaravelPHP">PHP and Laravel</option>
-                        <option value="NodeJS">NodeJS</option>
-                        <option value="ReactJS">ReactJS</option>
-                        <option value="AngularJS">AngularJS</option>
-                        <option value="VueJS">VueJS</option>
-                        <option value="Python">Python</option>
-                        <option value="Ruby">Ruby</option>
-                        <option value="Java">Java</option>
-                        <option value="CSharp">C#</option>
-                        <option value="CPlusPlus">C++</option>
-                        <option value="C">C</option>
-                        <option value="Rust">Rust</option>
+                        <?php
+                        // Get the list of language from the enum file
+                        $projectLanguage = getJsonFromFile("../data/enum/ProjectLanguage.json");
+                        foreach ($projectLanguage as $language) { ?>
+                            <option value='<?= $language["id"] ?>'><?= $language["name"] ?></option>
+                        <?php
+                        }
+                        ?>
                     </select><br />
                     <input type="submit" value="Create the project" class="button ValidationCreation" />
                 </form>

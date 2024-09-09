@@ -1,0 +1,46 @@
+{
+    "1": {
+        "id": "1",
+        "name": "Static Website",
+        "value": "StaticWeb",
+        "FolderNedded": {
+            "base": {
+                "name": "base",
+                "folders": {
+                    "css": {
+                        "name": "css",
+                        "folders": [],
+                        "files": ["style.css"]
+                    },
+                    "js": {
+                        "name": "js",
+                        "folders": [],
+                        "files": []
+                    },
+                    "img": {
+                        "name": "img",
+                        "folders": [
+                            {
+                                "name": "icons",
+                                "folders": [],
+                                "files": []
+                            },
+                            {
+                                "name": "others",
+                                "folders": [],
+                                "files": []
+                            }
+                        ],
+                        "files": []
+                    },
+                    "fonts": {
+                        "name": "fonts",
+                        "folders": [],
+                        "files": []
+                    }
+                },
+                "files": ["index.html"]
+            }
+        }
+    }
+}

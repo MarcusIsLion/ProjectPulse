@@ -1,6 +1,8 @@
 <?php
 // This file is used to check if the version of the project is up to date or not.
 
+include_once("GetJsonFromFile.php");
+
 ///<sumary>
 /// Get the JSON content from an URL
 ///</sumary>
@@ -13,21 +15,6 @@ function getJsonFromUrl($url)
     if ($json === false) {
         throw new Exception("Impossible to get the file at the URL : $url");
     }
-    return json_decode($json, true);
-}
-
-///<sumary>
-/// Get the JSON content from a file
-///</sumary>
-///<param name="$filePath">The path of the JSON file</param>
-///<returns>The JSON content</returns>
-///<exception>Exception if the file doesn't exist</exception>
-function getJsonFromFile($filePath)
-{
-    if (!file_exists($filePath)) {
-        throw new Exception("The local file doesn't exist at the path : $filePath");
-    }
-    $json = file_get_contents($filePath);
     return json_decode($json, true);
 }
 
