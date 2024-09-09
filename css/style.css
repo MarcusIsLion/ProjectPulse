@@ -510,3 +510,12 @@ input[type="text"] {
     border: none;
 }
 /* End style for the alert box */
+
+/* Style for the NoInternet badge style */
+.NoInternet {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 19px;
+}
