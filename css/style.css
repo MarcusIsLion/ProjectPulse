@@ -14,6 +14,20 @@ body {
     min-height: 100vh;
 }
 
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    border: 7px solid #232943;
+    box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-purple);
+    border-radius: 3px;
+}
+
 .hidden {
     display: none;
 }
@@ -263,6 +277,7 @@ h2 {
 
 .GeneralButton {
     padding: 10px 20px;
+    margin-bottom: 20px;
 }
 /* End of the style of buttons */
 
