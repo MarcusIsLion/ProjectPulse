@@ -72,7 +72,7 @@ function CreateProjectBase($projectLanguageId, $projectName, $projectType, $proj
     // Créer le fichier JSON du projet
     $projectJson = array(
         "type" => $projectType,
-        "state" => "Developpement",
+        "state" => "Development",
         "visual" => "hidden",
         "language" => $projectLanguage["value"],
     );
