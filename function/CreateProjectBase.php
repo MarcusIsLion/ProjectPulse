@@ -1,40 +1,5 @@
 <?php
 
-// structure of the ProjectLanguage.json file
-// "1": {
-//         "id": "1",
-//         "name": "Static Website",
-//         "value": "StaticWeb",
-//         "FolderNedded": {
-//             "base": {
-//                 "name": "base",
-//                 "folders": {
-//                     "css": {
-//                         "name": "css",
-//                         "folders": [],
-//                         "files": ["style.css"]
-//                     },
-//                     "js": {
-//                         "name": "js",
-//                         "folders": [],
-//                         "files": []
-//                     },
-//                     "img": {
-//                         "name": "img",
-//                         "folders": ["icons", "others"],
-//                         "files": []
-//                     },
-//                     "fonts": {
-//                         "name": "fonts",
-//                         "folders": [],
-//                         "files": []
-//                     }
-//                 },
-//                 "files": ["index.html"]
-//             }
-//         }
-//     }
-
 include_once("getJsonFromFile.php");
 
 function CreateFile($projectDirectory, $folder, $file)
