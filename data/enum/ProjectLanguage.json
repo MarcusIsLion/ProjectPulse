@@ -1,4 +1,9 @@
 {
+    "0": {
+        "id": "0",
+        "name": "Undifined",
+        "value": "other"
+    },
     "1": {
         "id": "1",
         "name": "Static Website",

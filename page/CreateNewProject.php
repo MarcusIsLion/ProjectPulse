@@ -24,7 +24,7 @@ $localData = getJsonFromFile("../data/version.json");
                     <input type="text" id="projectName" name="projectName" placeholder="Name of the project" required /><br />
                     <label for="projectType">Type of project :</label>
                     <input type="text" id="projectType" name=" projectType" placeholder="Type of the project" required /><br />
-                    <label for="projectLanguage">Language of the project :</label>
+                    <label for="projectLanguage">Structure of the project :</label>
                     <select name="projectLanguage" id="projectLanguage">
                         <?php
                         // Get the list of language from the enum file
@@ -34,6 +34,12 @@ $localData = getJsonFromFile("../data/version.json");
                         <?php
                         }
                         ?>
+                    </select>
+                    <a href="DownloadStructure.php">Download more structure</a><br>
+                    <label for="visual">Display the project on the dashboard or place it in the secret part ? (visable by a button)</label>
+                    <select name="visual" id="visual">
+                        <option value="hidden">Hidden</option>
+                        <option value="visible">Visible</option>
                     </select><br />
                     <input type="submit" value="Create the project" class="button ValidationCreation" />
                 </form>

@@ -312,6 +312,14 @@ input[type="text"] {
     border: 2px solid var(--black);
 }
 
+#visual {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid var(--black);
+}
+
 .ValidationCreation {
     margin-left: 10px;
 }
@@ -327,13 +335,13 @@ input[type="text"] {
 .Form-Grid {
     display: flex;
     margin-bottom: 20px;
-    background-color: var(--white);
+    background-color: var(--background-color-body);
     border-radius: 10px;
     border: 2px solid var(--primary-purple);
     justify-content: center;
     align-items: center;
     padding: 10px;
-    width: 500px;
+    width: 800px;
 }
 
 .Form-Grid input {
@@ -571,4 +579,32 @@ input[type="text"] {
     left: 10px;
     width: 60px;
     height: 19px;
+}
+/* End of the style for the NoInternet badge style */
+
+/* Style for the form check box grid */
+.FormCheckBoxGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.FormCheckBoxGrid label {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.FormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid var(--primary-purple);
+    padding: 10px;
+    border-radius: 10px;
+    width: auto;
 }
