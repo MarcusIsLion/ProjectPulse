@@ -20,6 +20,7 @@ $LanguageIdPopover = 0;
 
 include_once("function/UpdateCheck.php");
 include_once("function/InternetConnectionCheck.php");
+include_once("function/GetFolderSize.php");
 $localData = getJsonFromFile("data/version.json");
 
 
@@ -92,7 +93,7 @@ $localData = getJsonFromFile("data/version.json");
                                 <h2><?= htmlspecialchars($dossier, ENT_QUOTES) ?></h2>
                                 <ul>
                                     <li>
-                                        <p>Size : <?= round((filesize($chemin_complet) / 1024), 2) ?> Ko</p>
+                                        <p>Size : <?= formatSizeUnits(getFolderSize($chemin_complet)) ?></p>
                                     </li>
                                     <li>
                                         <p>Created at : <?= date("d/m/Y", filectime($chemin_complet)) ?></p>
@@ -186,7 +187,7 @@ $localData = getJsonFromFile("data/version.json");
                                     <h2><?= htmlspecialchars($dossier, ENT_QUOTES) ?></h2>
                                     <ul>
                                         <li>
-                                            <p>Size : <?= round((filesize($chemin_complet) / 1024), 2) ?> Ko</p>
+                                            <p>Size : <?= formatSizeUnits(getFolderSize($chemin_complet)) ?></p>
                                         </li>
                                         <li>
                                             <p>Created at : <?= date("d/m/Y", filectime($chemin_complet)) ?></p>
