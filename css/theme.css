@@ -18,7 +18,9 @@
     --white: #fff;
     --black: #000;
     --black-low-opacity: rgba(0, 0, 0, 0.1);
-    --red: #ff0000;
+    --red: #ba0000;
+    --green: #02bd02;
+    --jaune: #f39c12;
     /* end of standard colors */
 }
 

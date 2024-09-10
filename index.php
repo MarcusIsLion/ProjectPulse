@@ -22,6 +22,7 @@ include_once("function/UpdateCheck.php");
 include_once("function/InternetConnectionCheck.php");
 include_once("function/GetFolderSize.php");
 include_once("includes/card.php");
+include_once("includes/alertbox.php");
 $localData = getJsonFromFile("data/version.json");
 
 
@@ -56,12 +57,7 @@ $localData = getJsonFromFile("data/version.json");
         <?php
         }
         if (isset($_GET['GitFolder'])) {
-        ?>
-            <div class="alterbox">
-                <p>During the suppression of your project, a ".git" folder has been found, and can't be delete by this programme. Please do it manualy.</p>
-                <a href="index.php"><i class="fa-solid fa-close"></i></a>
-            </div>
-        <?php
+            generateAlertBox("A \".git\" folder has been found and can't be delete automaticly. Please delete it manualy.", "error", "index.php");
         }
         ?>
         <div class="Head">

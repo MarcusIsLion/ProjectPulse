@@ -509,22 +509,59 @@ input[type="text"] {
 /* End of the style for the button (left side of the bottom button) */
 
 /* Style for the alert box */
-.alterbox {
+.alertbox {
     display: flex;
     flex-direction: row;
-    background-color: var(--red);
-    color: var(--text-color);
     border-radius: 10px;
     align-items: center;
     justify-content: center;
 }
 
-.alterbox a {
-    color: var(--text-color);
+.alertbox a {
     margin: 20px;
     background-color: transparent;
     border: none;
 }
+
+.alertbox.error {
+    background-color: var(--red);
+    color: var(--black);
+}
+
+.alertbox.error a {
+    color: var(--black);
+}
+
+.alertbox.error a:hover {
+    background-color: var(--red);
+}
+
+.alertbox.success {
+    background-color: var(--green);
+    color: var(--black);
+}
+
+.alertbox.success a {
+    color: var(--black);
+}
+
+.alertbox.success a:hover {
+    background-color: var(--green);
+}
+
+.alertbox.info {
+    background-color: var(--jaune);
+    color: var(--black);
+}
+
+.alertbox.info a {
+    color: var(--black);
+}
+
+.alertbox.info a:hover {
+    background-color: var(--jaune);
+}
+
 /* End style for the alert box */
 
 /* Style for the NoInternet badge style */

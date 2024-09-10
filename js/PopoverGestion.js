@@ -3,9 +3,9 @@
 ///</sumary>
 ///<param name="$buttonid">The id of the button to display the popover</param>
 function afficherPopover($buttonid) {
-    // j'affiche le popover avec un toggle
-    $buttonid.classList.toggle("hidden");
+    var div = document.getElementById($buttonid);
+    div.classList.toggle("hidden");
     setTimeout(() => {
-        $buttonid.classList.toggle("hidden");
+        div.classList.toggle("hidden");
     }, 2000);
 }
