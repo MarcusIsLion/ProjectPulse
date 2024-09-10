@@ -20,6 +20,8 @@ $LanguageIdPopover = 0;
 
 include_once("function/UpdateCheck.php");
 include_once("function/InternetConnectionCheck.php");
+include_once("function/GetFolderSize.php");
+include_once("includes/card.php");
 $localData = getJsonFromFile("data/version.json");
 
 
@@ -83,49 +85,8 @@ $localData = getJsonFromFile("data/version.json");
                         $state = json_decode(file_get_contents($chemin_complet . "/type.json"))->state;
 
                         $logo = findLogo($chemin_complet);
-            ?>
-                        <div class="card">
-                            <?php if ($logo) { ?>
-                                <div class="logo-background" style="background-image: url('<?= htmlspecialchars($logo, ENT_QUOTES) ?>');"></div>
-                            <?php } ?>
-                            <div class="CardContent">
-                                <h2><?= htmlspecialchars($dossier, ENT_QUOTES) ?></h2>
-                                <ul>
-                                    <li>
-                                        <p>Size : <?= round((filesize($chemin_complet) / 1024), 2) ?> Ko</p>
-                                    </li>
-                                    <li>
-                                        <p>Created at : <?= date("d/m/Y", filectime($chemin_complet)) ?></p>
-                                    </li>
-                                    <li>
-                                        <p>Updated at : <?= date("d/m/Y", filemtime($chemin_complet)) ?></p>
-                                    </li>
-                                    <li>
-                                        <p><?= count(scandir($chemin_complet)) ?> files / <?= count(glob($chemin_complet . '/*', GLOB_ONLYDIR)) ?> folders</p>
-                                    </li>
-                                    <li>
-                                        <p>Type : <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->type ?>
-                                        <div class="icon-container">
-                                            <!-- Icône Font Awesome -->
-                                            <button onclick="afficherPopover(<?= 'LanguageIdPopover' . $LanguageIdPopover ?>)" class="NotButton"><i class="fas fa-info-circle popover-icon"></i></button>
-                                            <!-- Popover -->
-                                            <div class="popover hidden" id="<?= 'LanguageIdPopover' . $LanguageIdPopover ?>">
-                                                <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->language ?>
-                                            </div>
-                                        </div>
-                                        </p>
-                                    </li>
-                                    <li class=" <?= htmlspecialchars($state, ENT_QUOTES) ?>">
-                                        <p>State : <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->state ?></p>
-                                    </li>
-                                </ul>
-                                <div class="CardButtonSection">
-                                    <a href="<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Open this project</a>
-                                    <a href="page/UpdateProject.php?ProjectName=<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Update theses characteristics</a>
-                                </div>
-                            </div>
-                        </div>
-            <?php
+
+                        echo generateCardHTML($logo, $dossier, $chemin_complet, $state, $LanguageIdPopover);
                     }
                 }
             }
@@ -177,48 +138,7 @@ $localData = getJsonFromFile("data/version.json");
                             $state = json_decode(file_get_contents($chemin_complet . "/type.json"))->state;
 
                             $logo = findLogo($chemin_complet);
-                ?>
-                            <div class="card">
-                                <?php if ($logo) { ?>
-                                    <div class="logo-background" style="background-image: url('<?= htmlspecialchars($logo, ENT_QUOTES) ?>');"></div>
-                                <?php } ?>
-                                <div class="CardContent">
-                                    <h2><?= htmlspecialchars($dossier, ENT_QUOTES) ?></h2>
-                                    <ul>
-                                        <li>
-                                            <p>Size : <?= round((filesize($chemin_complet) / 1024), 2) ?> Ko</p>
-                                        </li>
-                                        <li>
-                                            <p>Created at : <?= date("d/m/Y", filectime($chemin_complet)) ?></p>
-                                        </li>
-                                        <li>
-                                            <p>Updated at : <?= date("d/m/Y", filemtime($chemin_complet)) ?></p>
-                                        </li>
-                                        <li>
-                                            <p><?= count(scandir($chemin_complet)) ?> files / <?= count(glob($chemin_complet . '/*', GLOB_ONLYDIR)) ?> folders</p>
-                                        </li>
-                                        <li>
-                                            <p>Type : <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->type ?></p>
-                                            <div class="icon-container">
-                                                <!-- Icône Font Awesome -->
-                                                <button onclick="afficherPopover(<?= 'LanguageIdPopover' . $LanguageIdPopover ?>)" class="NotButton"><i class="fas fa-info-circle popover-icon"></i></button>
-                                                <!-- Popover -->
-                                                <div class="popover hidden" id="<?= 'LanguageIdPopover' . $LanguageIdPopover ?>">
-                                                    <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->language ?>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class=" <?= htmlspecialchars($state, ENT_QUOTES) ?>">
-                                            <p>State : <?= json_decode(file_get_contents($chemin_complet . "/type.json"))->state ?></p>
-                                        </li>
-                                    </ul>
-                                    <div class="CardButtonSection">
-                                        <a href="<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Open this project</a>
-                                        <a href="page/UpdateProject.php?ProjectName=<?= htmlspecialchars($chemin_complet, ENT_QUOTES) ?>" class="button">Update theses characteristics</a>
-                                    </div>
-                                </div>
-                            </div>
-                <?php
+                            echo generateCardHTML($logo, $dossier, $chemin_complet, $state, $LanguageIdPopover);
                         }
                     }
                 }
