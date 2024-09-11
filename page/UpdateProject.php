@@ -1,4 +1,10 @@
 <?php
+
+// j'affiche toutes les erreurs php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $FullprojectName = "../" . $_GET['ProjectName'];
 // je sépare le text Website/ du nom du projet
 $projectName = explode("/", $FullprojectName)[1];

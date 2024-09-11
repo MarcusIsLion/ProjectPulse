@@ -68,26 +68,46 @@ $localData = getJsonFromFile("data/version.json");
             You will find here, all the projects that you have created and that are in development. You can also create a new project or modify the characteristics of an existing project.
         </h2>
 
-        <div class="card-grid">
-            <?php
+        <?php
+        if (is_dir("Projects/")) {
             $dossiers = scandir("Projects/");
 
-            foreach ($dossiers as $dossier) {
-                $LanguageIdPopover++;
-                $chemin_complet = "Projects/" . $dossier;
-                if (is_dir($chemin_complet) && $dossier != "." && $dossier != ".." && $dossier != "post") {
-                    $visual = json_decode(file_get_contents("Projects/" . $dossier . "/type.json"))->visual;
-                    if ($visual != "hidden") {
-                        $state = json_decode(file_get_contents($chemin_complet . "/type.json"))->state;
+            // Filtrer les dossiers pour ne garder que ceux qui ne sont pas "." et ".."
+            $dossiers_utiles = array_filter($dossiers, function ($dossier) {
+                return $dossier != "." && $dossier != "..";
+            });
 
-                        $logo = findLogo($chemin_complet);
+            // Si après filtrage il n'y a plus de dossiers utiles, afficher "No project found"
+            if (empty($dossiers_utiles)) { ?>
+                <h3>No project found.</h3>
+            <?php
+            } else { ?>
+                <div class="card-grid">
+                    <?php
+                    foreach ($dossiers_utiles as $dossier) {
+                        $LanguageIdPopover++;
+                        $chemin_complet = "Projects/" . $dossier;
 
-                        echo generateCardHTML($logo, $dossier, $chemin_complet, $state, $LanguageIdPopover);
-                    }
-                }
+                        if (is_dir($chemin_complet) && $dossier != "post") {
+                            $visual = json_decode(file_get_contents($chemin_complet . "/type.json"))->visual;
+                            if ($visual != "hidden") {
+                                $state = json_decode(file_get_contents($chemin_complet . "/type.json"))->state;
+
+                                $logo = findLogo($chemin_complet);
+
+                                echo generateCardHTML($logo, $dossier, $chemin_complet, $state, $LanguageIdPopover);
+                            }
+                        }
+                    } ?>
+                </div>
+            <?php
             }
-            ?>
-        </div>
+        } else { ?>
+            <h3>No "Projects" folder.</h3>
+        <?php
+        }
+        ?>
+
 
         <div class="BottomButton">
             <div class="StartBottomButton">

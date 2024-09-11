@@ -83,6 +83,19 @@ h2 {
     align-items: center;
     margin: 0 0 0 10px;
 }
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid var(--primary-blue);
+    border-radius: 5px;
+    padding: 10px;
+}
 /* End of the style of the main title */
 
 /* Style of the container */
