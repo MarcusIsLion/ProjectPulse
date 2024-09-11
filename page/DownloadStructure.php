@@ -38,17 +38,17 @@ $localData = getJsonFromFile("../data/version.json");
                         }
                         // Afficher la case avec ou sans précochage
                         if ($checked) {
-                            echo '<input type="checkbox" name="projectLanguage[]" value="' . $onlineValue['id'] . '" checked> ' . $onlineValue['name'] . '<br>';
+                            echo '<input type="checkbox" name="projectStructure[]" value="' . $onlineValue['id'] . '" checked> ' . $onlineValue['name'] . '<br>';
                         } else {
-                            echo '<input type="checkbox" name="projectLanguage[]" value="' . $onlineValue['id'] . '"> ' . $onlineValue['name'] . '<br>';
+                            echo '<input type="checkbox" name="projectStructure[]" value="' . $onlineValue['id'] . '"> ' . $onlineValue['name'] . '<br>';
                         }
                     }
                     ?>
                 </div><br>
-                <input type="submit" value="Download the structure" class="button ValidationCreation" />
+                <input type="submit" value="Download all structures selected" class="button ValidationCreation" />
             </form>
         </div>
-        <a href="../index.php">Cancel</a>
+        <a href="CreateNewProject.php">Cancel</a>
     </div>
 </body>
 

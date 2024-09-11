@@ -35,7 +35,7 @@ $localData = getJsonFromFile("../data/version.json");
                         }
                         ?>
                     </select>
-                    <a href="DownloadStructure.php">Download more structure</a><br>
+                    <a href="DownloadStructure.php">Manage all structures</a><br>
                     <label for="visual">Display the project on the dashboard or place it in the secret part ? (visable by a button)</label>
                     <select name="visual" id="visual">
                         <option value="hidden">Hidden</option>
