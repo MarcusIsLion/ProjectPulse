@@ -40,7 +40,7 @@ function CreateFolder($projectDirectory, $folder)
     }
 }
 
-function CreateProjectBase($projectLanguageId, $projectName, $projectType, $projectDirectory)
+function CreateProjectBase($projectLanguageId, $projectName, $projectType, $projectDirectory, $projectVisual)
 {
     // Récupérer la liste des langues du fichier enum
     $JsonFile = getJsonFromFile("../data/enum/ProjectLanguage.json");
@@ -73,7 +73,7 @@ function CreateProjectBase($projectLanguageId, $projectName, $projectType, $proj
     $projectJson = array(
         "type" => $projectType,
         "state" => "Development",
-        "visual" => "hidden",
+        "visual" => $projectVisual,
         "language" => $projectLanguage["value"],
     );
     file_put_contents($projectDirectory . "/type.json", json_encode($projectJson));
