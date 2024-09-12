@@ -1,5 +1,5 @@
 <?php
-function generateCardHTML($logo, $dossier, $chemin_complet, $state, $LanguageIdPopover)
+function generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover)
 {
     // Récupération des informations de taille, dates, et type
     $size = formatSizeUnits(getFolderSize($chemin_complet));
@@ -10,9 +10,19 @@ function generateCardHTML($logo, $dossier, $chemin_complet, $state, $LanguageIdP
 
     // Lecture des informations du fichier JSON
     $typeData = json_decode(file_get_contents($chemin_complet . "/type.json"));
-    $type = $typeData->type;
-    $language = $typeData->language;
-    $stateFromJson = $typeData->state;
+    if ($typeData == null) {
+        $visual = "hidden";
+        $state = "error";
+        $type = "error";
+        $language = "error";
+        $stateFromJson = "error";
+    } else {
+        $visual = $typeData->visual;
+        $state = $typeData->state;
+        $type = $typeData->type;
+        $language = $typeData->language;
+        $stateFromJson = $typeData->state;
+    }
 
     // Construction du HTML à retourner
     $html = '<div class="card">';
