@@ -1,7 +1,5 @@
 <?php
-
-// create a function that is searching for the last update of a project folder, thats mean the last update of the files in the folder and subfolders
-function GetLastUpdate($path)
+function getLastUpdate($path)
 {
     $lastUpdate = 0;
     $dir = opendir($path);
@@ -15,5 +13,7 @@ function GetLastUpdate($path)
         }
     }
     closedir($dir);
+    $lastUpdate = (int)$lastUpdate;
+    $lastUpdate = date("d/m/Y", $lastUpdate);
     return $lastUpdate;
 }
