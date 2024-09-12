@@ -89,10 +89,16 @@ $localData = getJsonFromFile("data/version.json");
                         $chemin_complet = "Projects/" . $dossier;
 
                         if (is_dir($chemin_complet) && $dossier != "post") {
-                            $visual = json_decode(file_get_contents($chemin_complet . "/type.json"))->visual;
-                            if ($visual != "hidden") {
+                            // vérification de l'existance du fichier type.json
+                            if (!file_exists($chemin_complet . "/type.json")) {
+                                generateAlertBox("The file \"type.json\" is missing in the folder \"" . $dossier . "\". Please create it.", "error", "page/ProjectSettings.php?Project=" . $dossier);
+                                $visual = "hidden";
+                                $state = "error";
+                            } else {
+                                $visual = json_decode(file_get_contents($chemin_complet . "/type.json"))->visual;
                                 $state = json_decode(file_get_contents($chemin_complet . "/type.json"))->state;
-
+                            }
+                            if ($visual != "hidden") {
                                 $logo = findLogo($chemin_complet);
 
                                 echo generateCardHTML($logo, $dossier, $chemin_complet, $state, $LanguageIdPopover);
