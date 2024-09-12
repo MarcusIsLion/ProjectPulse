@@ -1,11 +1,11 @@
 <?php
-require_once("../function/GetLastUpdate.php");
+require_once("function/GetLastUpdate.php");
 function generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover)
 {
     // Récupération des informations de taille, dates, et type
     $size = formatSizeUnits(getFolderSize($chemin_complet));
     $createdAt = date("d/m/Y", filectime($chemin_complet));
-    $updatedAt = GetLastUpdate($chemin_complet);
+    $updatedAt = getLastUpdate($chemin_complet);
     $fileCount = count(scandir($chemin_complet));
     $folderCount = count(glob($chemin_complet . '/*', GLOB_ONLYDIR));
 
