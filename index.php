@@ -89,8 +89,8 @@ $localData = getJsonFromFile("data/version.json");
                         $chemin_complet = "Projects/" . $dossier;
 
                         if (is_dir($chemin_complet) && $dossier != "post") {
-                            // vérification de l'existance du fichier type.json
-                            if (!file_exists($chemin_complet . "/type.json")) {
+                            // vérification de l'existance du fichier type.json et qu'il soit non vide
+                            if (!file_exists($chemin_complet . "/type.json") && !empty(file_get_contents($chemin_complet . "/type.json"))) {
                                 generateAlertBox("The file \"type.json\" is missing in the folder \"" . $dossier . "\". Please create it.", "error", "page/ProjectSettings.php?Project=" . $dossier);
                                 $visual = "hidden";
                             } else {
