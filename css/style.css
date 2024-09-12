@@ -269,6 +269,10 @@ h3 {
     margin-left: 10px;
 }
 
+.card.error {
+    background-color: var(--red);
+    color: var(--black);
+}
 /* End of the style of the content of the card */
 
 /* Style of buttons */

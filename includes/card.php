@@ -25,7 +25,11 @@ function generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover)
     }
 
     // Construction du HTML à retourner
-    $html = '<div class="card">';
+    if ($typeData == null) {
+        $html = '<div class="card error">';
+    } else {
+        $html = '<div class="card">';
+    }
 
     if ($logo) {
         $html .= '<div class="logo-background" style="background-image: url(\'' . htmlspecialchars($logo, ENT_QUOTES) . '\');"></div>';

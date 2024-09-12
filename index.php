@@ -90,8 +90,7 @@ $localData = getJsonFromFile("data/version.json");
 
                         if (is_dir($chemin_complet) && $dossier != "post") {
                             // vérification de l'existance du fichier type.json et qu'il soit non vide
-                            if (!file_exists($chemin_complet . "/type.json") && !empty(file_get_contents($chemin_complet . "/type.json"))) {
-                                generateAlertBox("The file \"type.json\" is missing in the folder \"" . $dossier . "\". Please create it.", "error", "page/ProjectSettings.php?Project=" . $dossier);
+                            if (!file_exists($chemin_complet . "/type.json") || empty(file_get_contents($chemin_complet . "/type.json"))) {
                                 $visual = "hidden";
                             } else {
                                 $visual = json_decode(file_get_contents($chemin_complet . "/type.json"))->visual;
@@ -153,12 +152,15 @@ $localData = getJsonFromFile("data/version.json");
                     $LanguageIdPopover++;
                     $chemin_complet = "Projects/" . $dossier;
                     if (is_dir($chemin_complet) && $dossier != "." && $dossier != ".." && $dossier != "post") {
-                        $visual = json_decode(file_get_contents("Projects/" . $dossier . "/type.json"))->visual;
+                        if (!file_exists($chemin_complet . "/type.json") || empty(file_get_contents($chemin_complet . "/type.json"))) {
+                            $visual = "hidden";
+                        } else {
+                            $visual = json_decode(file_get_contents($chemin_complet . "/type.json"))->visual;
+                        }
                         if ($visual == "hidden") {
-                            $state = json_decode(file_get_contents($chemin_complet . "/type.json"))->state;
-
                             $logo = findLogo($chemin_complet);
-                            echo generateCardHTML($logo, $dossier, $chemin_complet, $state, $LanguageIdPopover);
+
+                            echo generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover);
                         }
                     }
                 }
