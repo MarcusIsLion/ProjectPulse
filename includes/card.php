@@ -1,8 +1,31 @@
 <?php
-require_once("function/GetLastUpdate.php");
-function generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover)
+require_once("GetLastUpdate.php");
+
+function findLogo($basePath)
 {
+    $folders = ['img', 'images', 'image'];
+    $extensions = ['png', 'jpeg', 'jpg', 'gif'];
+
+    foreach ($folders as $folder) {
+        foreach ($extensions as $ext) {
+            $logoPath = "$basePath/$folder/logo.$ext";
+            if (file_exists($logoPath)) {
+                return $logoPath;
+            }
+        }
+    }
+    return null;
+}
+
+function generateCardHTML($dossier, $chemin_complet, $LanguageIdPopover)
+{
+    // Vérification si $chemin_complet est valide
+    if (empty($chemin_complet) || !is_dir($chemin_complet)) {
+        return '<div class="card error">Chemin invalide ou dossier non trouvé.</div>';
+    }
+
     // Récupération des informations de taille, dates, et type
+    $logo = findLogo($chemin_complet);
     $size = formatSizeUnits(getFolderSize($chemin_complet));
     $createdAt = date("d/m/Y", filectime($chemin_complet));
     $updatedAt = getLastUpdate($chemin_complet);
@@ -10,15 +33,18 @@ function generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover)
     $folderCount = count(glob($chemin_complet . '/*', GLOB_ONLYDIR));
 
     // Lecture des informations du fichier JSON
-    $typeData = json_decode(file_get_contents($chemin_complet . "/type.json"));
+    if (file_exists($chemin_complet . "/type.json")) {
+        $typeData = json_decode(file_get_contents($chemin_complet . "/type.json"));
+    } else {
+        $typeData = null;
+    }
+
     if ($typeData == null) {
-        $visual = "hidden";
         $state = "error";
         $type = "error";
         $language = "error";
         $stateFromJson = "error";
     } else {
-        $visual = $typeData->visual;
         $state = $typeData->state;
         $type = $typeData->type;
         $language = $typeData->language;
@@ -72,3 +98,5 @@ function generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover)
 
     return $html;
 }
+
+echo generateCardHTML($_GET['dossier'], $_GET['chemin_complet'], $_GET['LanguageIdPopover']);
