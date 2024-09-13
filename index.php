@@ -1,20 +1,4 @@
 <?php
-function findLogo($basePath)
-{
-    $folders = ['img', 'images', 'image'];
-    $extensions = ['png', 'jpeg', 'jpg', 'gif'];
-
-    foreach ($folders as $folder) {
-        foreach ($extensions as $ext) {
-            $logoPath = "$basePath/$folder/logo.$ext";
-            if (file_exists($logoPath)) {
-                return $logoPath;
-            }
-        }
-    }
-    return null;
-}
-
 $LanguageIdPopover = 0;
 
 
@@ -82,31 +66,12 @@ $localData = getJsonFromFile("data/version.json");
                 <h3>No project found.</h3>
             <?php
             } else { ?>
-                <div class="card-grid">
-                    <?php
-                    foreach ($dossiers_utiles as $dossier) {
-                        $LanguageIdPopover++;
-                        $chemin_complet = "Projects/" . $dossier;
-
-                        if (is_dir($chemin_complet) && $dossier != "post") {
-                            // vérification de l'existance du fichier type.json et qu'il soit non vide
-                            if (!file_exists($chemin_complet . "/type.json") || empty(file_get_contents($chemin_complet . "/type.json"))) {
-                                $visual = "hidden";
-                            } else {
-                                $visual = json_decode(file_get_contents($chemin_complet . "/type.json"))->visual;
-                            }
-                            if ($visual != "hidden") {
-                                $logo = findLogo($chemin_complet);
-
-                                echo generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover);
-                            }
-                        }
-                    } ?>
+                <div class="card-grid" id="VisibleCardGrid">
                 </div>
             <?php
             }
         } else { ?>
-            <h3>No "Projects" folder.</h3>
+            <h3>No " Projects" folder.</h3>
         <?php
         }
         ?>
@@ -145,26 +110,7 @@ $localData = getJsonFromFile("data/version.json");
             <div class="Separator"></div>
             <h1>Hidden projects</h1>
 
-            <div class="card-grid">
-                <?php
-                $dossiers = scandir("Projects/");
-                foreach ($dossiers as $dossier) {
-                    $LanguageIdPopover++;
-                    $chemin_complet = "Projects/" . $dossier;
-                    if (is_dir($chemin_complet) && $dossier != "." && $dossier != ".." && $dossier != "post") {
-                        if (!file_exists($chemin_complet . "/type.json") || empty(file_get_contents($chemin_complet . "/type.json"))) {
-                            $visual = "hidden";
-                        } else {
-                            $visual = json_decode(file_get_contents($chemin_complet . "/type.json"))->visual;
-                        }
-                        if ($visual == "hidden") {
-                            $logo = findLogo($chemin_complet);
-
-                            echo generateCardHTML($logo, $dossier, $chemin_complet, $LanguageIdPopover);
-                        }
-                    }
-                }
-                ?>
+            <div class="card-grid" id="HiddenCardGrid">
             </div>
         </div>
 
@@ -172,6 +118,7 @@ $localData = getJsonFromFile("data/version.json");
     <script src="js/HiddenElementGestion.js"></script>
     <script src="js/PopoverGestion.js"></script>
     <script src="js/WavingTextJS.js"></script>
+    <script src="js/CardDisplayManagment.js"></script>
 </body>
 
 </html>
