@@ -1,5 +1,4 @@
 <?php
-
 function formatSizeUnits($octets)
 {
     if ($octets >= 1073741824) {
@@ -25,11 +24,11 @@ function getFolderSize($path)
     foreach ($files as $t) {
         if ($t != "." && $t != "..") {
             if (is_dir($path . "/" . $t)) {
-                $totalSize += getFolderSize($path . "/" . $t);
+                $totalSize += getFolderSize($path . "/" . $t); // Addition avant formatage
             } else {
                 $totalSize += filesize($path . "/" . $t);
             }
         }
     }
-    return formatSizeUnits(round($totalSize, 2));
+    return round($totalSize, 2); // Formatage à la fin
 }

@@ -1,11 +1,7 @@
 <?php
-$LanguageIdPopover = 0;
-
-
 include_once("function/UpdateCheck.php");
 include_once("function/InternetConnectionCheck.php");
-include_once("function/GetFolderSize.php");
-include_once("includes/card.php");
+include_once("includes/GetFolderSize.php");
 include_once("includes/alertbox.php");
 $localData = getJsonFromFile("data/version.json");
 
@@ -44,14 +40,25 @@ $localData = getJsonFromFile("data/version.json");
             generateAlertBox("A \".git\" folder has been found and can't be delete automaticly. Please delete it manualy.", "error", "index.php");
         }
         ?>
-        <div class="Head">
-            <img src="img/Logo.png" width="40px" height="40px" class="LogoTitle" />
-            <h1 id="waveText"> <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>P</span><span>u</span><span>l</span><span>s</span><span>e</span></h1>
+        <div class="TopGrid">
+            <div class="LeftSectionTopGrid">
+                <div id="ProgressBarContener">
+                    <div id="ProgressionBar">
+                        <div id="ProgressionBarInner"></div> <!-- Ajoutez cet élément -->
+                    </div>
+                </div>
+            </div>
+            <div class="CenterSectionTopGrid">
+                <img src="img/Logo.png" width="40px" height="40px" class="LogoTitle" />
+                <h1 id="waveText"> <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>P</span><span>u</span><span>l</span><span>s</span><span>e</span></h1>
+            </div>
+            <div class="RightSectionTopGrid">
+
+            </div>
         </div>
         <h2>
             You will find here, all the projects that you have created and that are in development. You can also create a new project or modify the characteristics of an existing project.
         </h2>
-
         <?php
         if (is_dir("Projects/")) {
             $dossiers = scandir("Projects/");

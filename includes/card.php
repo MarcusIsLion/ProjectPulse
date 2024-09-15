@@ -1,5 +1,6 @@
 <?php
 require_once("GetLastUpdate.php");
+require_once("GetFolderSize.php");
 
 function findLogo($basePath)
 {
@@ -17,11 +18,12 @@ function findLogo($basePath)
     return null;
 }
 
-function generateCardHTML($dossier, $chemin_complet, $LanguageIdPopover)
+function generateCardHTML($dossier, $chemin_complet, $LanguageIdPopover, $typeData)
 {
     // Vérification si $chemin_complet est valide
     if (empty($chemin_complet) || !is_dir($chemin_complet)) {
-        return '<div class="card error">Chemin invalide ou dossier non trouvé.</div>';
+        return '<div class="card error">Chemin invalide ou dossier non trouvé.
+        </div>';
     }
 
     // Récupération des informations de taille, dates, et type
@@ -32,31 +34,22 @@ function generateCardHTML($dossier, $chemin_complet, $LanguageIdPopover)
     $fileCount = count(scandir($chemin_complet));
     $folderCount = count(glob($chemin_complet . '/*', GLOB_ONLYDIR));
 
-    // Lecture des informations du fichier JSON
-    if (file_exists($chemin_complet . "/type.json")) {
-        $typeData = json_decode(file_get_contents($chemin_complet . "/type.json"));
-    } else {
-        $typeData = null;
-    }
-
-    if ($typeData == null) {
-        $state = "error";
-        $type = "error";
-        $language = "error";
-        $stateFromJson = "error";
-    } else {
-        $state = $typeData->state;
-        $type = $typeData->type;
-        $language = $typeData->language;
-        $stateFromJson = $typeData->state;
-    }
 
     // Construction du HTML à retourner
     if ($typeData == null) {
         $html = '<div class="card error">';
+        $typeData = '{"type":"Error","state":"Error","language":"Error"}';
+        $html .= '<div class="alertbox error"><a href="index.php"><i class="fa-solid fa-triangle-exclamation"></i> The json file for this project was not found. <i class="fa-solid fa-triangle-exclamation"></i></a></div>';
     } else {
         $html = '<div class="card">';
     }
+
+    $typeData = json_decode($typeData);
+    $type = $typeData->type;
+    $state = $typeData->state;
+    $stateFromJson = $state;
+    $language = $typeData->language;
+
 
     if ($logo) {
         $html .= '<div class="logo-background" style="background-image: url(\'' . htmlspecialchars($logo, ENT_QUOTES) . '\');"></div>';
@@ -98,5 +91,4 @@ function generateCardHTML($dossier, $chemin_complet, $LanguageIdPopover)
 
     return $html;
 }
-
-echo generateCardHTML($_GET['dossier'], $_GET['chemin_complet'], $_GET['LanguageIdPopover']);
+echo generateCardHTML($_GET['dossier'], $_GET['chemin_complet'], $_GET['LanguageIdPopover'], $_GET['typeData']);

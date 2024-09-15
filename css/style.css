@@ -625,3 +625,61 @@ input[type="text"] {
     border-radius: 10px;
     width: auto;
 }
+
+/* progress bar */
+#ProgressBarContener {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    border-radius: 6px;
+    transition: all 5s ease;
+    border: 1px solid var(--black);
+}
+
+#ProgressionBar {
+    width: 100%;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+    height: 30px;
+}
+
+#ProgressionBarInner {
+    height: 100%;
+    width: 0;
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+    transition: all 0.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+/* End of the progress bar */
+
+/* Style for the Section Top Grid 
+A section for 3 elements, the first one is on the left, the second one is in the middle and the third one is on the right 
+in the left there is the progress bar, in the middle there is the title and in the right there is nothing */
+.TopGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.LeftSectionTopGrid {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+}
+
+.StartBottomButton {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+}
+/* End of the style for the Section Top Grid */
