@@ -12,8 +12,10 @@ function changeIcone(icone) {
         button.appendChild(icone);
         icone.classList.remove("fa-eye");
         icone.classList.add("fa-eye-slash");
+        button.href = "#HiddenCardPart";
     } else {
-        button.innerText = "Show hidden projects ";
+        button.href = "#VisibleCardPart";
+        button.innerText = "See hidden projects ";
         button.appendChild(icone);
         icone.classList.remove("fa-eye-slash");
         icone.classList.add("fa-eye");
@@ -35,6 +37,12 @@ button.addEventListener("click", function (event) {
     if (button) {
         let icone = button.getElementsByTagName("i")[0];
         changeIcone(icone);
-        ManageHiddenClass();
+        if (button.innerText != "Hide hidden projects ") {
+            setTimeout(() => {
+                ManageHiddenClass();
+            }, 500);
+        } else {
+            ManageHiddenClass();
+        }
     }
 });

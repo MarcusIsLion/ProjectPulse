@@ -3,7 +3,7 @@ if (isset($_POST)) {
     // pour chaque post coché, on va le télécharger et l'ajouter au fichier local si il n'existe d'éjà pas ou suppression si il existe déjà mais qu'il est décoché
     include_once("../function/GetJsonFromUrl.php");
     include_once("../function/GetJsonFromFile.php");
-    $OnlineprojectLanguage = getJsonFromUrl("https://raw.githubusercontent.com/MarcusIsLion/ProjectPulse/ProjectStructure/structureToDownload.json");
+    $OnlineprojectLanguage = getJsonFromUrl("https://raw.githubusercontent.com/MarcusIsLion/ProjectPulse/main/data/projectstructure.json");
     $LocalprojectLanguage = getJsonFromFile("../data/enum/ProjectLanguage.json");
     foreach ($OnlineprojectLanguage as $onlineKey => $onlineValue) {
         $checked = false;

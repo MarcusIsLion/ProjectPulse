@@ -1,5 +1,5 @@
 <?php
-include_once("../function/UpdateCheck.php");
+require_once("../function/GetJsonFromFile.php");
 $localData = getJsonFromFile("../data/version.json");
 ?>
 

@@ -5,10 +5,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$FullprojectName = "../" . $_GET['ProjectName'];
+$FullprojectName = $_GET['ProjectName'];
 // je sépare le text Website/ du nom du projet
 $projectName = explode("/", $FullprojectName)[1];
-include_once("../function/UpdateCheck.php");
+include_once("../function/GetJsonFromFile.php");
 $localData = getJsonFromFile("../data/version.json");
 ?>
 

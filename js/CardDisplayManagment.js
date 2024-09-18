@@ -16,7 +16,15 @@ function updateProgressBar() {
     progressBar.style.width = progressPercentage + "%";
 
     // Mettre à jour le texte à l'intérieur de la barre de progression
-    progressBar.innerText = `Charging all projects : ${projectsCompleted}/${NumberOfProjects}`;
+    const progressBarWidth = progressBar.offsetWidth;
+
+    if (progressBarWidth <= 140) {
+        // Si la largeur est inférieure à 120px, afficher un texte court
+        progressBar.innerText = `${projectsCompleted}/${NumberOfProjects}`;
+    } else {
+        // Si la largeur est supérieure ou égale à 120px, afficher un texte complet
+        progressBar.innerText = `Charging all projects: ${projectsCompleted}/${NumberOfProjects}`;
+    }
 
     if (progressPercentage === 100) {
         progressBar.style.backgroundColor = "#02bd02";
@@ -67,7 +75,7 @@ async function displayCards(cards) {
         );
         const jsonAwait = await responseJsonFile.text();
         const responsePhp = await fetch(
-            `includes/card.php?dossier=${cardName}&chemin_complet=../Projects/${cardName}&LanguageIdPopover=${
+            `includes/card.php?folder=${cardName}&full_path=../Projects/${cardName}&LanguageIdPopover=${
                 index + 1
             }&typeData=${jsonAwait}`
         );

@@ -7,7 +7,6 @@ if (isset($_POST['theme'])) {
     $data["theme"] = $theme;
     $data = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents("../data/version.json", $data);
-    header("Location: ../index.php");
 } else {
-    header("Location: ../index.php");
+    echo "No theme selected";
 }
