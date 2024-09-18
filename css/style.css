@@ -123,21 +123,11 @@ h3 {
 /* Style for card */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Limited at 3 columns */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 20px;
     justify-items: center;
     margin-bottom: 30px;
-}
-
-@media screen and (max-width: 1160px) {
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr); /* Limited at 2 columns */
-    }
-}
-@media screen and (max-width: 1000px) {
-    .card-grid {
-        grid-template-columns: repeat(1, 1fr); /* Limited at 1 columns */
-    }
+    transition: all 0.3s ease;
 }
 
 .card {
@@ -147,13 +137,13 @@ h3 {
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
-    width: 100%;
     height: 100%;
-    max-width: 400px;
+    width: 380px;
+    max-width: 380px;
     box-sizing: border-box;
-    transition: all 0.3s ease;
     overflow: hidden;
     font-size: 1em;
+    transition: all 0.3s ease;
 }
 
 /* Logo place at the background of the card */
@@ -170,9 +160,9 @@ h3 {
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px var(--black-low-opacity);
-    width: 102%;
-    height: 102%;
+    box-shadow: 0 16px 32px var(--shadow-color);
+    width: 100%;
+    height: 100%;
 }
 
 /* Style of the content of the card */
@@ -272,6 +262,20 @@ h3 {
 .card.error {
     background-color: var(--red);
     color: var(--black);
+}
+
+.card.error a {
+    color: var(--black);
+    border-color: var(--black);
+}
+
+.card.error a:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.card.error .error + .card.error .error:hover a {
+    background-color: var(--black);
 }
 /* End of the style of the content of the card */
 
@@ -410,24 +414,28 @@ input[type="text"] {
 
 /* Style for the popover */
 .popover {
+    display: block;
     position: absolute;
-    top: 170px;
-    left: 115px;
+    top: 160px;
+    left: 125px;
     padding: 10px;
     background-color: var(--black);
     color: var(--white);
     border-radius: 5px;
     width: auto;
     box-shadow: 0px 0px 10px var(--black-low-opacity);
+    border: 2px solid var(--primary-blue);
     z-index: 10;
+    opacity: 0;
     transition: all 0.3s ease;
 }
 
 .popover::after {
     content: "";
     position: absolute;
-    top: -10px;
+    top: 28px;
     left: 20px;
+    transform: rotate(92deg);
     border-width: 10px;
     border-style: solid;
     border-color: transparent transparent var(--black) transparent;
@@ -440,6 +448,10 @@ input[type="text"] {
     cursor: pointer;
     justify-content: center;
     align-items: center;
+}
+
+.NotButton:hover + .popover {
+    opacity: 1;
 }
 
 .popover-icon {
@@ -473,18 +485,36 @@ input[type="text"] {
     width: auto;
 }
 
+#FooterForm {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: auto;
+    margin-bottom: 17px;
+}
+
 .BottomButton a.IssueBadge {
     display: flex;
     justify-content: left;
+    align-items: center;
+}
+
+.CenterBottomButton {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 /* End of the style for the bottom button on the page */
 
 /* Style for the update badge */
 .UpdateBadge {
     position: fixed;
-    top: 2%;
-    right: -240px;
-    transform: translateY(-50%);
+    top: 30px;
+    right: -100px;
     background-color: var(--update-badge-color);
     color: var(--white);
     padding: 10px;
@@ -492,8 +522,8 @@ input[type="text"] {
     font-size: 16px;
     border-radius: 5px;
     box-shadow: 0px 4px 6px var(--black-low-opacity);
-    transition: right 0.5s ease;
     z-index: 3;
+    transition: right 0.5s ease-in-out; /* Transition fluide */
 }
 
 .UpdateBadge a {
@@ -503,7 +533,23 @@ input[type="text"] {
 }
 
 .UpdateBadge:hover {
-    right: 0px;
+    right: 0px; /* Position au survol */
+    animation: none; /* Arrêt de l'animation */
+}
+
+@keyframes bumping {
+    0%,
+    100% {
+        transform: translateX(120px);
+    }
+    50% {
+        transform: translateX(67px);
+    }
+}
+
+/* Ajout d'une animation subtile sur l'axe Y pour un léger effet de mouvement */
+.UpdateBadge {
+    animation: bumping 1.8s infinite;
 }
 /* End of the style for the update badge */
 
@@ -551,6 +597,8 @@ input[type="text"] {
 .alertbox.error {
     background-color: var(--red);
     color: var(--black);
+    border: 1px solid var(--black);
+    margin-bottom: 10px;
 }
 
 .alertbox.error a {
@@ -682,4 +730,58 @@ in the left there is the progress bar, in the middle there is the title and in t
     align-items: center;
     width: 100%;
 }
+
+.CenterSectionTopGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 /* End of the style for the Section Top Grid */
+
+/* Style for the div when no internet */
+#VersionBadgeDiv {
+    display: none;
+}
+#NoInternetDiv {
+    display: block;
+}
+#GitHubIssueDiv {
+    display: none;
+}
+#GitHubDiv {
+    display: none;
+}
+
+#HiddenCardGrid,
+#VisibleCardGrid {
+    margin-bottom: 110px;
+    transition: all 0.3s ease;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 0px 20px 0px 20px;
+    width: 90%;
+    border-radius: 20px 20px 0px 0px;
+    z-index: 100;
+    border: 1px solid var(--primary-purple);
+    box-shadow: 0px 0px 10px var(--black-low-opacity);
+    background-color: var(--background-color-body);
+}
+
+@media screen and (max-width: 980px) {
+    .CenterBottomButton {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #HiddenCardGrid,
+    #VisibleCardGrid {
+        margin-bottom: 175px;
+    }
+}

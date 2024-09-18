@@ -22,7 +22,7 @@ $localData = getJsonFromFile("../data/version.json");
                 <div class="FormCheckBoxGrid">
                     <?php
                     // Charger les fichiers JSON en ligne et local
-                    $OnlineprojectLanguage = json_decode(file_get_contents("https://raw.githubusercontent.com/MarcusIsLion/ProjectPulse/ProjectStructure/download.json"), true);
+                    $OnlineprojectLanguage = json_decode(file_get_contents("https://raw.githubusercontent.com/MarcusIsLion/ProjectPulse/main/data/projectstructure.json"), true);
                     $LocalprojectLanguage = json_decode(file_get_contents("../data/enum/ProjectLanguage.json"), true);
                     // Boucle sur chaque élément du fichier en ligne
                     foreach ($OnlineprojectLanguage as $onlineKey => $onlineValue) {
