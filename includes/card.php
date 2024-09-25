@@ -221,14 +221,14 @@ class card implements ICard
                 <p>' . $fileCount . ' files / ' . $folderCount . ' folders</p>
             </li>';
         $html .= '<li>
-                <p>Type : ' . $type . '</p>';
+                <p class="ProjectType">Type : ' . $type . '</p>';
         $html .= '<div class="icon-container">';
         $html .= '<button class="NotButton"><i class="fas fa-info-circle popover-icon"></i></button>';
         $html .= '<div class="popover" id="LanguageIdPopover' . $LanguageIdPopover . '"><p class="projectLanguage">' . $language . '</p></div>';
         $html .= '</div>
             </li>';
         $html .= '<li class="' . htmlspecialchars($state, ENT_QUOTES) . '">';
-        $html .= '<p>State : ' . $stateFromJson . '</p>';
+        $html .= '<p class="projectState">State : ' . $stateFromJson . '</p>';
         $html .= '</li>
         </ul>';
 

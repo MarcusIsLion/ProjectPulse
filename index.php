@@ -120,6 +120,7 @@ $localData = getJsonFromFile("data/version.json");
     <script src="js/SmoothScrool.js"></script>
     <script src="js/ThemeGestion.js"></script>
     <script src="js/ResearchBar.js"></script>
+
 </body>
 
 </html>
