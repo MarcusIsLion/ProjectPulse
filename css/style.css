@@ -785,3 +785,57 @@ footer {
         margin-bottom: 175px;
     }
 }
+
+.center {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--background-color-body);
+    z-index: 20;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-input {
+    width: 400px;
+    border: none;
+    border-bottom: 1px solid var(--light-grey);
+    outline: none;
+    transition: width 0.7s ease;
+    opacity: 1;
+}
+
+@keyframes slideLeft {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 150px;
+        opacity: 1;
+    }
+}
+
+.show-input .search-input {
+    width: 150px;
+    opacity: 1;
+    transition: width 0.5s ease;
+}

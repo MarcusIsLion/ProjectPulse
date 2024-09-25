@@ -19,7 +19,8 @@ $localData = getJsonFromFile("../data/version.json");
         <h1>Please, register informations to create your new json file :</h1>
         <div class="Form-Grid-Container">
             <div class="Form-Grid">
-                <form action="../post/post_CreateNewProject.php" method="post">
+                <form action="../post/post_createJsonFile.php" method="post">
+                    <input type="hidden" name="projectDirectory" value="../Projects/<?= $_GET['ProjectName'] ?>" />
                     <label for="projectType">Type of the project :</label>
                     <input type="text" id="projectType" name=" projectType" placeholder="Type of the project" required /><br />
                     <label for="projectState">State of the project :</label>

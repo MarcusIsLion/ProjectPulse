@@ -1,7 +1,10 @@
+/**
+ *  Fonction pour vérifier si il existe une connexion internet
+ * @returns ok si connexion valide, false en autre cas
+ */
 async function isInternetAvailable() {
     try {
         const controller = new AbortController();
-        const signal = controller.signal;
 
         // Timeout après 1 seconde si la requête est trop longue
         const timeout = setTimeout(() => controller.abort(), 1000);
@@ -81,13 +84,7 @@ const UpdateBadgeDiv = document.getElementById("VersionBadgeDiv");
 
 async function ManageBadges() {
     const isInternet = await isInternetAvailable();
-
     if (isInternet) {
-        NoInternetDiv.style.display = "block";
-        GitHubIssueDiv.style.display = "none";
-        GitHubDiv.style.display = "none";
-        UpdateBadgeDiv.style.display = "none";
-    } else {
         NoInternetDiv.style.display = "none";
         GitHubIssueDiv.style.display = "block";
         GitHubDiv.style.display = "block";
@@ -98,6 +95,11 @@ async function ManageBadges() {
         } else {
             UpdateBadgeDiv.style.display = "none";
         }
+    } else {
+        NoInternetDiv.style.display = "block";
+        GitHubIssueDiv.style.display = "none";
+        GitHubDiv.style.display = "none";
+        UpdateBadgeDiv.style.display = "none";
     }
 }
 

@@ -189,7 +189,7 @@ class card implements ICard
         if ($typeData == null) {
             $html = '<div class="card error">';
             $typeData = '{"type":"Error","state":"Error","language":"Error"}';
-            $html .= '<div class="alertbox error"><a href="page/CreateJSONFile.php"><i class="fa-solid fa-triangle-exclamation"></i><p> The json file for this project was not found. <br/> Click here to create the json file </p><i class="fa-solid fa-triangle-exclamation"></i></a></div>';
+            $html .= '<div class="alertbox error"><a href="page/CreateJSONFile.php?ProjectName=' .  htmlspecialchars($folder) . '"><i class="fa-solid fa-triangle-exclamation"></i><p> The json file for this project was not found. <br/> Click here to create the json file </p><i class="fa-solid fa-triangle-exclamation"></i></a></div>';
         } else {
             $html = '<div class="card">';
         }
@@ -206,7 +206,7 @@ class card implements ICard
         }
 
         $html .= '<div class="CardContent">';
-        $html .= '<h2>' . htmlspecialchars($folder, ENT_QUOTES) . '</h2>';
+        $html .= '<h2 class="card-title">' . htmlspecialchars($folder, ENT_QUOTES) . '</h2>';
         $html .= '<ul>';
         $html .= '<li>
                 <p>Size : ' . $size . '</p>
@@ -224,7 +224,7 @@ class card implements ICard
                 <p>Type : ' . $type . '</p>';
         $html .= '<div class="icon-container">';
         $html .= '<button class="NotButton"><i class="fas fa-info-circle popover-icon"></i></button>';
-        $html .= '<div class="popover" id="LanguageIdPopover' . $LanguageIdPopover . '">' . $language . '</div>';
+        $html .= '<div class="popover" id="LanguageIdPopover' . $LanguageIdPopover . '"><p class="projectLanguage">' . $language . '</p></div>';
         $html .= '</div>
             </li>';
         $html .= '<li class="' . htmlspecialchars($state, ENT_QUOTES) . '">';

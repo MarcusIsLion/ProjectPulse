@@ -1,6 +1,7 @@
 <?php
 
 include_once("getJsonFromFile.php");
+require_once("CreateJsonFile.php");
 
 function CreateFile($projectDirectory, $folder, $file)
 {
@@ -68,13 +69,5 @@ function CreateProjectBase($projectLanguageId, $projectName, $projectType, $proj
             CreateFolder($projectDirectory, $folder);
         }
     }
-
-    // Créer le fichier JSON du projet
-    $projectJson = array(
-        "type" => $projectType,
-        "state" => "Development",
-        "visual" => $projectVisual,
-        "language" => $projectLanguage["value"],
-    );
-    file_put_contents($projectDirectory . "/type.json", json_encode($projectJson));
+    createJsonFile($projectDirectory, $projectType, "Developpment", $projectVisual, $projectLanguage);
 }

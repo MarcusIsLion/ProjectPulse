@@ -46,6 +46,15 @@ $localData = getJsonFromFile("data/version.json");
             You will find here, all the projects that you have created and that are in development. You can also create a new project or modify the characteristics of an existing project.
         </h2>
         <div id="VisibleCardPart" class="Separator"></div>
+        <div class="center">
+            <div class="navbar">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Research a project" id="search-box">
+                </div>
+            </div>
+        </div>
+
+        <div class="Separator"></div>
         <h1>Visible projects</h1>
         <?php
         if (is_dir("Projects/")) {
@@ -110,6 +119,7 @@ $localData = getJsonFromFile("data/version.json");
     <script src="js/CheckInternetConnection.js"></script>
     <script src="js/SmoothScrool.js"></script>
     <script src="js/ThemeGestion.js"></script>
+    <script src="js/ResearchBar.js"></script>
 </body>
 
 </html>
