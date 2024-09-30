@@ -90,7 +90,7 @@ async function ManageBadges() {
         GitHubDiv.style.display = "block";
 
         const isUpdated = await CheckVersions();
-        if (!isUpdated) {
+        if (isUpdated) {
             UpdateBadgeDiv.style.display = "block";
         } else {
             UpdateBadgeDiv.style.display = "none";
