@@ -1,5 +1,6 @@
 <?php
 require_once("../function/GetJsonFromFile.php");
+require_once("../includes/echoCssFiles.php");
 $localData = getJsonFromFile("../data/version.json");
 ?>
 
@@ -10,8 +11,9 @@ $localData = getJsonFromFile("../data/version.json");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create a new json file</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/theme.css" />
+    <?php
+    echoCssFiles("../css/");
+    ?>
 </head>
 
 <body class="<?= $localData["theme"] ?>">

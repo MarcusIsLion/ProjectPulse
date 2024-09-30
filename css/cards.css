@@ -1,0 +1,147 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.card {
+    position: relative;
+    background-color: var(--card-background-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    height: 100%;
+    width: 380px;
+    max-width: 380px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.CardContent a.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo place at the background of the card */
+.logo-background {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+    filter: blur(6px);
+}
+
+.card:hover {
+    box-shadow: 0 16px 32px var(--shadow-color);
+    width: 100%;
+    height: 100%;
+}
+
+/* Style of the content of the card */
+.CardContent {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    height: 100%;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.card ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card ul li p {
+    width: auto;
+    white-space: nowrap;
+    margin: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.card ul li::before {
+    content: "✔";
+    color: var(--primary-purple);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.card .lastUpdate {
+    font-size: 0.8em;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.Stoped {
+    color: var(--stop-color);
+}
+
+.Standby {
+    color: var(--standby-color);
+}
+
+.Development {
+    color: var(--development-color);
+}
+
+.Finished {
+    color: var(--finished-color);
+}
+
+.icon-container {
+    display: flex;
+    cursor: pointer;
+    justify-content: right;
+    margin-left: 10px;
+}
+
+.card.error {
+    background-color: var(--red);
+    color: var(--black);
+}
+
+.card.error a {
+    color: var(--black);
+    border-color: var(--black);
+}
+
+.card.error a:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.card.error .error + .card.error .error:hover a {
+    background-color: var(--black);
+}

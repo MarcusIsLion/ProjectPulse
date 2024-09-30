@@ -1,0 +1,20 @@
+/* footer.css */
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 0px 20px 0px 20px;
+    width: 90%;
+    border-radius: 20px 20px 0px 0px;
+    z-index: 100;
+    border: 1px solid var(--primary-purple);
+    box-shadow: 0px 0px 10px var(--black-low-opacity);
+    background-color: var(--background-color-body);
+}
+
+#FooterForm {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: auto;
+    margin-bottom: 17px;
+}

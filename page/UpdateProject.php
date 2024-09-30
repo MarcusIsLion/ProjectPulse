@@ -9,6 +9,7 @@ $FullprojectName = $_GET['ProjectName'];
 // je sépare le text Website/ du nom du projet
 $projectName = explode("/", $FullprojectName)[1];
 include_once("../function/GetJsonFromFile.php");
+require_once("../includes/echoCssFiles.php");
 $localData = getJsonFromFile("../data/version.json");
 ?>
 
@@ -19,8 +20,9 @@ $localData = getJsonFromFile("../data/version.json");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modifier le projet local</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/theme.css" />
+    <?php
+    echoCssFiles("../css/");
+    ?>
 </head>
 
 <body class="<?= $localData["theme"] ?>">

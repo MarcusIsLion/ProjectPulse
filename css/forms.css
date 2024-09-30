@@ -1,0 +1,96 @@
+/* forms.css */
+input[type="text"],
+#projectState,
+#projectVisual,
+#projectLanguage,
+#visual {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid var(--black);
+    margin-top: 10px;
+}
+
+#projectState {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid var(--black);
+}
+
+#projectVisual {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid var(--black);
+}
+
+#projectLanguage {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid var(--black);
+}
+
+#visual {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 2px solid var(--black);
+}
+
+.ValidationCreation {
+    margin-left: 10px;
+}
+
+.Form-Grid-Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Form-Grid {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: var(--background-color-body);
+    border-radius: 10px;
+    border: 2px solid var(--primary-purple);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 800px;
+}
+
+.Form-Grid input {
+    margin: 10px;
+}
+
+.FormCheckBoxGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.FormCheckBoxGrid label {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.FormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid var(--primary-purple);
+    padding: 10px;
+    border-radius: 10px;
+    width: auto;
+}

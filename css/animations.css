@@ -1,0 +1,42 @@
+/* animations.css */
+@keyframes waveEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bumping {
+    0%,
+    100% {
+        transform: translateX(120px);
+    }
+    50% {
+        transform: translateX(67px);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 150px;
+        opacity: 1;
+    }
+}
+
+@keyframes turning {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

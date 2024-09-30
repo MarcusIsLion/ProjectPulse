@@ -1,103 +1,3 @@
-/* General style of the page */
-* {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Arial", sans-serif;
-    background-color: var(--background-color-body);
-    color: var(--text-color);
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-::-webkit-scrollbar {
-    width: 15px;
-}
-
-::-webkit-scrollbar-track {
-    border: 4px solid #232943;
-    border-radius: 2px;
-    box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-purple);
-    border-radius: 3px;
-}
-
-.hidden {
-    display: none;
-}
-/* End of general style of the page */
-
-/* Style of the main title */
-.Head {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.LogoTitle {
-    margin-right: 20px;
-}
-
-h1 {
-    font-size: 2em;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h1 span {
-    display: inline-block;
-    transition: transform 0.5s ease;
-    font-family: Arial, sans-serif;
-    color: var(--primary-blue);
-}
-
-/* Animation for the main title */
-@keyframes waveEffect {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.5);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: var(--black);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 0 10px;
-}
-
-h3 {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--primary-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    border: 1px solid var(--primary-blue);
-    border-radius: 5px;
-    padding: 10px;
-}
-/* End of the style of the main title */
-
 /* Style of the container */
 .container {
     width: 100%;
@@ -119,275 +19,6 @@ h3 {
     text-decoration: underline;
 }
 /* End of the style of the container */
-
-/* Style for card */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    margin-bottom: 30px;
-    transition: all 0.3s ease;
-}
-
-.card {
-    position: relative;
-    background-color: var(--card-background-color);
-    box-shadow: 0 4px 8px var(--shadow-color);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    height: 100%;
-    width: 380px;
-    max-width: 380px;
-    box-sizing: border-box;
-    overflow: hidden;
-    font-size: 1em;
-    transition: all 0.3s ease;
-}
-
-/* Logo place at the background of the card */
-.logo-background {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.1;
-    z-index: 1;
-    filter: blur(6px);
-}
-
-.card:hover {
-    box-shadow: 0 16px 32px var(--shadow-color);
-    width: 100%;
-    height: 100%;
-}
-
-/* Style of the content of the card */
-.CardContent {
-    z-index: 2;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    height: 100%;
-}
-
-.card h2 {
-    font-size: 1.5em;
-    color: var(--black);
-    margin-bottom: 20px;
-}
-
-.card p {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.card ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-}
-
-.card ul li {
-    font-size: 1em;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.card ul li p {
-    width: auto;
-    white-space: nowrap;
-    margin: 0;
-    transition: all 0.5s ease-in-out;
-}
-
-.card ul li::before {
-    content: "✔";
-    color: var(--primary-purple);
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.card .lastUpdate {
-    font-size: 0.8em;
-    color: var(--black);
-    margin-bottom: 20px;
-}
-
-.Stoped {
-    color: var(--stop-color);
-}
-
-.Standby {
-    color: var(--standby-color);
-}
-
-.Development {
-    color: var(--development-color);
-}
-
-.Finished {
-    color: var(--finished-color);
-}
-
-.CardButtonSection {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Limite à 2 colonnes */
-    gap: 20px;
-    justify-items: center;
-}
-
-.CardButtonSection a {
-    height: 100%;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: bottom;
-    align-items: center;
-}
-
-.icon-container {
-    display: flex;
-    cursor: pointer;
-    justify-content: right;
-    margin-left: 10px;
-}
-
-.card.error {
-    background-color: var(--red);
-    color: var(--black);
-}
-
-.card.error a {
-    color: var(--black);
-    border-color: var(--black);
-}
-
-.card.error a:hover {
-    background-color: var(--black);
-    color: var(--white);
-}
-
-.card.error .error + .card.error .error:hover a {
-    background-color: var(--black);
-}
-/* End of the style of the content of the card */
-
-/* Style of buttons */
-.button {
-    background-color: transparent;
-    color: var(--primary-purple);
-    border: 2px solid var(--primary-purple);
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    background-color: var(--primary-purple);
-    color: var(--white);
-}
-
-.GeneralButton {
-    padding: 10px 20px;
-    margin-bottom: 20px;
-}
-/* End of the style of buttons */
-
-/* Style of the creation project form */
-input[type="text"] {
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    border: 2px solid var(--black);
-}
-
-#projectState {
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    border: 2px solid var(--black);
-}
-
-#projectVisual {
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    border: 2px solid var(--black);
-}
-
-#projectLanguage {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    border: 2px solid var(--black);
-}
-
-#visual {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    border: 2px solid var(--black);
-}
-
-.ValidationCreation {
-    margin-left: 10px;
-}
-
-.Form-Grid-Container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.Form-Grid {
-    display: flex;
-    margin-bottom: 20px;
-    background-color: var(--background-color-body);
-    border-radius: 10px;
-    border: 2px solid var(--primary-purple);
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 800px;
-}
-
-.Form-Grid input {
-    margin: 10px;
-}
-/* End of the style of the creation project form */
-
-/* Style of the update project form */
-.DeleteButton {
-    margin-left: 10px;
-    background-color: transparent;
-    color: var(--black) !important;
-    border: 2px solid var(--delete-button-color);
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.DeleteButton:hover {
-    background-color: var(--delete-button-color);
-    color: var(--black) !important;
-}
-/* End of the style of the update project form */
 
 /* Style of the secret part */
 .secret {
@@ -442,18 +73,6 @@ input[type="text"] {
     transition: all 0.3s ease;
 }
 
-.NotButton {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-}
-
-.NotButton:hover + .popover {
-    opacity: 1;
-}
-
 .popover-icon {
     display: flex;
     justify-content: center;
@@ -462,53 +81,6 @@ input[type="text"] {
     color: var(--black);
 }
 /* End of the style for the popover */
-
-/* Style for the bottom button on the page */
-.BottomButton {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    margin-top: 20px;
-    width: 100%;
-}
-
-.EndBottomButton {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    width: 100%;
-}
-
-.BottomButton a.GithubBadge {
-    display: flex;
-    justify-content: right;
-    width: auto;
-}
-
-#FooterForm {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    width: auto;
-    margin-bottom: 17px;
-}
-
-.BottomButton a.IssueBadge {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.CenterBottomButton {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    transition: all 0.3s ease;
-}
-/* End of the style for the bottom button on the page */
 
 /* Style for the update badge */
 .UpdateBadge {
@@ -537,105 +109,11 @@ input[type="text"] {
     animation: none; /* Arrêt de l'animation */
 }
 
-@keyframes bumping {
-    0%,
-    100% {
-        transform: translateX(120px);
-    }
-    50% {
-        transform: translateX(67px);
-    }
-}
-
 /* Ajout d'une animation subtile sur l'axe Y pour un léger effet de mouvement */
 .UpdateBadge {
     animation: bumping 1.8s infinite;
 }
 /* End of the style for the update badge */
-
-/* Style for the button (left side of the bottom button) */
-.StartBottomButton {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-}
-
-.StartBottomButton a img {
-    display: flex;
-    justify-content: center;
-}
-
-.StartBottomButton form select {
-    display: flex;
-    position: relative;
-    top: 9px;
-    margin-right: 10px;
-    border-radius: 5px;
-    font-size: 0.8em;
-    background-color: var(--white);
-    color: var(--text-color);
-    border: 2px solid var(--black);
-}
-/* End of the style for the button (left side of the bottom button) */
-
-/* Style for the alert box */
-.alertbox {
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.alertbox a {
-    margin: 20px;
-    background-color: transparent;
-    border: none;
-}
-
-.alertbox.error {
-    background-color: var(--red);
-    color: var(--black);
-    border: 1px solid var(--black);
-    margin-bottom: 10px;
-}
-
-.alertbox.error a {
-    color: var(--black);
-}
-
-.alertbox.error a:hover {
-    background-color: var(--red);
-}
-
-.alertbox.success {
-    background-color: var(--green);
-    color: var(--black);
-}
-
-.alertbox.success a {
-    color: var(--black);
-}
-
-.alertbox.success a:hover {
-    background-color: var(--green);
-}
-
-.alertbox.info {
-    background-color: var(--jaune);
-    color: var(--black);
-}
-
-.alertbox.info a {
-    color: var(--black);
-}
-
-.alertbox.info a:hover {
-    background-color: var(--jaune);
-}
-
-/* End style for the alert box */
 
 /* Style for the NoInternet badge style */
 .NoInternet {
@@ -646,33 +124,6 @@ input[type="text"] {
     height: 19px;
 }
 /* End of the style for the NoInternet badge style */
-
-/* Style for the form check box grid */
-.FormCheckBoxGrid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.FormCheckBoxGrid label {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.FormContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid var(--primary-purple);
-    padding: 10px;
-    border-radius: 10px;
-    width: auto;
-}
 
 /* progress bar */
 #ProgressBarContener {
@@ -706,9 +157,6 @@ input[type="text"] {
 }
 /* End of the progress bar */
 
-/* Style for the Section Top Grid 
-A section for 3 elements, the first one is on the left, the second one is in the middle and the third one is on the right 
-in the left there is the progress bar, in the middle there is the title and in the right there is nothing */
 .TopGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -720,13 +168,6 @@ in the left there is the progress bar, in the middle there is the title and in t
 .LeftSectionTopGrid {
     display: flex;
     justify-content: right;
-    align-items: center;
-    width: 100%;
-}
-
-.StartBottomButton {
-    display: flex;
-    justify-content: left;
     align-items: center;
     width: 100%;
 }
@@ -759,27 +200,7 @@ in the left there is the progress bar, in the middle there is the title and in t
     transition: all 0.3s ease;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    padding: 0px 20px 0px 20px;
-    width: 90%;
-    border-radius: 20px 20px 0px 0px;
-    z-index: 100;
-    border: 1px solid var(--primary-purple);
-    box-shadow: 0px 0px 10px var(--black-low-opacity);
-    background-color: var(--background-color-body);
-}
-
 @media screen and (max-width: 980px) {
-    .CenterBottomButton {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
     #HiddenCardGrid,
     #VisibleCardGrid {
         margin-bottom: 175px;
@@ -816,26 +237,85 @@ footer {
 
 .search-input {
     width: 400px;
+    margin-left: 10px;
+    height: 30px;
     border: none;
     border-bottom: 1px solid var(--light-grey);
     outline: none;
     transition: width 0.7s ease;
     opacity: 1;
 }
-
-@keyframes slideLeft {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-    to {
-        width: 150px;
-        opacity: 1;
-    }
-}
-
 .show-input .search-input {
     width: 150px;
     opacity: 1;
     transition: width 0.5s ease;
+}
+
+.ReasearchTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar a {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-blue);
+    text-decoration: underline;
+    top: auto;
+    bottom: auto;
+}
+
+.navbar a:hover {
+    cursor: pointer;
+}
+
+#popover_navbar {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: var(--background-color-body);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--primary-purple);
+    z-index: 2000; /* Priorité supérieure à celle du fond sombre */
+}
+
+#NavbarHelper {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+#NavbarHelperCloser {
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    right: 10px;
+}
+
+#Hidder {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Effet sombre */
+    backdrop-filter: blur(5px); /* Effet de flou */
+    z-index: 1000; /* Priorité d'affichage */
+}
+
+#loader {
+    animation: turning 1s infinite;
 }

@@ -1,6 +1,7 @@
 <?php
 require_once("../function/GetJsonFromFile.php");
 $localData = getJsonFromFile("../data/version.json");
+require_once("../includes/echoCssFiles.php");
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +11,9 @@ $localData = getJsonFromFile("../data/version.json");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Créer un nouveau projet local</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/theme.css" />
+    <?php
+    echoCssFiles("../css/");
+    ?>
 </head>
 
 <body class="<?= $localData["theme"] ?>">

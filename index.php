@@ -1,6 +1,7 @@
 <?php
 require_once("includes/alertbox.php");
 require_once("function/GetJsonFromFile.php");
+require_once("includes/echoCssFiles.php");
 $localData = getJsonFromFile("data/version.json");
 ?>
 
@@ -11,14 +12,34 @@ $localData = getJsonFromFile("data/version.json");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProjectPulse : Home</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/theme.css" />
+    <?php
+    echoCssFiles("css/");
+    ?>
     <link rel="icon" href="img/Logo.png" />
     <link rel="apple-touch-icon" href="img/Logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="<?= $localData["theme"] ?>">
+    <div id="popover_navbar">
+        <button id="NavbarHelperCloser"><i class="fa-regular fa-circle-xmark popover-icon"></i></button>
+        <p class="NavbarHelptitle">
+            To research a project, you can use 4 elements :<br><br>
+
+            The name of the project;<br>
+            The state of the project;<br>
+            The type of the project;<br>
+            The language of the project.<br><br>
+
+            You can also presise the research by using the following syntax :<br><br>
+
+            "name:" to research only by project name<br>
+            "state:" to research only by project state<br>
+            "type:" to research only by project type<br>
+            "language:" to research only by project language
+        </p>
+    </div>
+    <div id="Hidder" class="hidden"></div>
     <div class="container">
         <div id="VersionBadgeDiv"><a href="https://github.com/MarcusIsLion/ProjectPulse" target="_blank" class="UpdateBadge"><img src="https://img.shields.io/badge/ProjectPulse%20has%20a%20new%20update%20available-20B2AA?style=for-the-badgebadge" alt="An update is availible" /></a></div>
         <div id="NoInternetDiv"><img src="img/NoInternet.png" alt="No internet image" class="NoInternet" /></div>
@@ -48,9 +69,16 @@ $localData = getJsonFromFile("data/version.json");
         <div id="VisibleCardPart" class="Separator"></div>
         <div class="center">
             <div class="navbar">
+                <h2 class="ReasearchTitle">Make a research : </h2>
                 <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Research a project" id="search-box">
+                    <input type="text" class="search-input" placeholder="Research a project..." id="search-box">
                 </div>
+                <button id="NavbarHelper"><i class="fas fa-info-circle popover-icon"></i></button>
+
+            </div>
+            <div id="loader" class=" hidden"><i class="fa-solid fa-c"></i></div>
+            <div id="error-message" class="alert error" style="display: none;">
+                Aucun projet trouvé.
             </div>
         </div>
 
@@ -120,7 +148,7 @@ $localData = getJsonFromFile("data/version.json");
     <script src="js/SmoothScrool.js"></script>
     <script src="js/ThemeGestion.js"></script>
     <script src="js/ResearchBar.js"></script>
-
+    <script src="js/NavBarHelperGestion.js"></script>
 </body>
 
 </html>

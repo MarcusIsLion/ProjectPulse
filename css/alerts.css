@@ -1,0 +1,55 @@
+/* alerts.css */
+.alertbox {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.alertbox a {
+    margin: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.alertbox.error {
+    background-color: var(--red);
+    color: var(--black);
+    border: 1px solid var(--black);
+    margin-bottom: 10px;
+}
+
+.alertbox.error a {
+    color: var(--black);
+}
+
+.alertbox.error a:hover {
+    background-color: var(--red);
+}
+
+.alertbox.success {
+    background-color: var(--green);
+    color: var(--black);
+}
+
+.alertbox.success a {
+    color: var(--black);
+}
+
+.alertbox.success a:hover {
+    background-color: var(--green);
+}
+
+.alertbox.info {
+    background-color: var(--jaune);
+    color: var(--black);
+}
+
+.alertbox.info a {
+    color: var(--black);
+}
+
+.alertbox.info a:hover {
+    background-color: var(--jaune);
+}

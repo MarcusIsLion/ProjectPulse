@@ -69,5 +69,5 @@ function CreateProjectBase($projectLanguageId, $projectName, $projectType, $proj
             CreateFolder($projectDirectory, $folder);
         }
     }
-    createJsonFile($projectDirectory, $projectType, "Developpment", $projectVisual, $projectLanguage);
+    createJsonFile($projectDirectory, $projectType, "Development", $projectVisual, $projectLanguage["language"]);
 }

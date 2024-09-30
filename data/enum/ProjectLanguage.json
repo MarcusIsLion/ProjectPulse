@@ -2,11 +2,13 @@
     {
         "id": 0,
         "name": "Undifined",
+        "language": "none",
         "value": "other"
     },
     {
         "id": "1",
         "name": "Static Website",
+        "language": "HTML/CSS/JS",
         "value": "StaticWeb",
         "FolderNedded": {
             "base": {
@@ -41,9 +43,7 @@
                     "css": {
                         "name": "css",
                         "folders": [],
-                        "files": [
-                            "style.css"
-                        ]
+                        "files": ["style.css"]
                     },
                     "js": {
                         "name": "js",
@@ -56,16 +56,14 @@
                         "files": []
                     }
                 },
-                "files": [
-                    "index.html",
-                    "README.md"
-                ]
+                "files": ["index.html", "README.md"]
             }
         }
     },
     {
         "id": "2",
         "name": "PHP Project",
+        "language": "HTML/CSS/JS/PHP/SQL",
         "value": "PHPWeb",
         "FolderNedded": {
             "base": {
@@ -100,16 +98,12 @@
                     "css": {
                         "name": "css",
                         "folders": [],
-                        "files": [
-                            "style.css"
-                        ]
+                        "files": ["style.css"]
                     },
                     "js": {
                         "name": "js",
                         "folders": [],
-                        "files": [
-                            "script.js"
-                        ]
+                        "files": ["script.js"]
                     },
                     "vendor": {
                         "name": "vendor",
@@ -119,47 +113,30 @@
                     "includes": {
                         "name": "includes",
                         "folders": [],
-                        "files": [
-                            "header.php",
-                            "footer.php"
-                        ]
+                        "files": ["header.php", "footer.php"]
                     },
                     "config": {
                         "name": "config",
                         "folders": [],
-                        "files": [
-                            "config.php"
-                        ]
+                        "files": ["config.php"]
                     },
                     "controllers": {
                         "name": "controllers",
                         "folders": [],
-                        "files": [
-                            "mainController.php"
-                        ]
+                        "files": ["mainController.php"]
                     },
                     "models": {
                         "name": "models",
                         "folders": [],
-                        "files": [
-                            "model.php"
-                        ]
+                        "files": ["model.php"]
                     },
                     "views": {
                         "name": "views",
                         "folders": [],
-                        "files": [
-                            "home.php",
-                            "about.php",
-                            "contact.php"
-                        ]
+                        "files": ["home.php", "about.php", "contact.php"]
                     }
                 },
-                "files": [
-                    "index.php",
-                    "README.md",
-                    ".htaccess"
-                ]
+                "files": ["index.php", "README.md", ".htaccess"]
             }
         }
     }

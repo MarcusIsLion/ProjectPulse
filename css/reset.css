@@ -1,0 +1,74 @@
+/* reset.css */
+/* General style of the page */
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: var(--background-color-body);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.Head {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.LogoTitle {
+    margin-right: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 span {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    font-family: Arial, sans-serif;
+    color: var(--primary-blue);
+}
+
+a {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 10px;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid var(--primary-blue);
+    border-radius: 5px;
+    padding: 10px;
+}
