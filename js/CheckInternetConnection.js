@@ -84,7 +84,7 @@ const UpdateBadgeDiv = document.getElementById("VersionBadgeDiv");
 
 async function ManageBadges() {
     const isInternet = await isInternetAvailable();
-    if (isInternet) {
+    if (!isInternet) {
         NoInternetDiv.style.display = "none";
         GitHubIssueDiv.style.display = "block";
         GitHubDiv.style.display = "block";
