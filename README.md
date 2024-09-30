@@ -2,6 +2,10 @@
 
 The newest dashboard for xampp and HTDOCS folder visualisation
 
+## Known bugs :
+
+-Only no connection mod availible;
+
 ## Installation
 
 Check our [wiki](https://github.com/MarcusIsLion/ProjectPulse/wiki)
