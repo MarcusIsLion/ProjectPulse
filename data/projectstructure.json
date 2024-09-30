@@ -1,0 +1,166 @@
+[
+    {
+        "id": 0,
+        "name": "Undifined",
+        "value": "other"
+    },
+    {
+        "id": "1",
+        "name": "Static Website",
+        "value": "StaticWeb",
+        "FolderNedded": {
+            "base": {
+                "name": "base",
+                "folders": {
+                    "Assets": {
+                        "name": "assets",
+                        "folders": {
+                            "img": {
+                                "name": "img",
+                                "folders": {
+                                    "icons": {
+                                        "name": "icons",
+                                        "folders": [],
+                                        "files": []
+                                    },
+                                    "others": {
+                                        "name": "others",
+                                        "folders": [],
+                                        "files": []
+                                    }
+                                },
+                                "files": []
+                            },
+                            "fonts": {
+                                "name": "fonts",
+                                "folders": [],
+                                "files": []
+                            }
+                        }
+                    },
+                    "css": {
+                        "name": "css",
+                        "folders": [],
+                        "files": [
+                            "style.css"
+                        ]
+                    },
+                    "js": {
+                        "name": "js",
+                        "folders": [],
+                        "files": []
+                    },
+                    "vendor": {
+                        "name": "vendor",
+                        "folders": [],
+                        "files": []
+                    }
+                },
+                "files": [
+                    "index.html",
+                    "README.md"
+                ]
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "PHP Project",
+        "value": "PHPWeb",
+        "FolderNedded": {
+            "base": {
+                "name": "base",
+                "folders": {
+                    "assets": {
+                        "name": "assets",
+                        "folders": {
+                            "img": {
+                                "name": "img",
+                                "folders": {
+                                    "icons": {
+                                        "name": "icons",
+                                        "folders": [],
+                                        "files": []
+                                    },
+                                    "others": {
+                                        "name": "others",
+                                        "folders": [],
+                                        "files": []
+                                    }
+                                },
+                                "files": []
+                            },
+                            "fonts": {
+                                "name": "fonts",
+                                "folders": [],
+                                "files": []
+                            }
+                        }
+                    },
+                    "css": {
+                        "name": "css",
+                        "folders": [],
+                        "files": [
+                            "style.css"
+                        ]
+                    },
+                    "js": {
+                        "name": "js",
+                        "folders": [],
+                        "files": [
+                            "script.js"
+                        ]
+                    },
+                    "vendor": {
+                        "name": "vendor",
+                        "folders": [],
+                        "files": []
+                    },
+                    "includes": {
+                        "name": "includes",
+                        "folders": [],
+                        "files": [
+                            "header.php",
+                            "footer.php"
+                        ]
+                    },
+                    "config": {
+                        "name": "config",
+                        "folders": [],
+                        "files": [
+                            "config.php"
+                        ]
+                    },
+                    "controllers": {
+                        "name": "controllers",
+                        "folders": [],
+                        "files": [
+                            "mainController.php"
+                        ]
+                    },
+                    "models": {
+                        "name": "models",
+                        "folders": [],
+                        "files": [
+                            "model.php"
+                        ]
+                    },
+                    "views": {
+                        "name": "views",
+                        "folders": [],
+                        "files": [
+                            "home.php",
+                            "about.php",
+                            "contact.php"
+                        ]
+                    }
+                },
+                "files": [
+                    "index.php",
+                    "README.md",
+                    ".htaccess"
+                ]
+            }
+        }
+    }
+]
