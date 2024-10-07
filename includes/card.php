@@ -223,7 +223,7 @@ class card implements ICard
         $html .= '<li>
                 <p class="ProjectType">Type : ' . $type . '</p>';
         $html .= '<div class="icon-container">';
-        $html .= '<button class="NotButton"><i class="fas fa-info-circle popover-icon"></i></button>';
+        $html .= '<button class="NotButton"><i class="fas fa-info-circle popover-icon iconbutton"></i></button>';
         $html .= '<div class="popover" id="LanguageIdPopover' . $LanguageIdPopover . '"><p class="projectLanguage">' . $language . '</p></div>';
         $html .= '</div>
             </li>';

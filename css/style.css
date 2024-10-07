@@ -78,7 +78,7 @@
     justify-content: center;
     align-items: center;
     margin-left: 10px;
-    color: var(--black);
+    color: var(--text-color);
 }
 /* End of the style for the popover */
 
