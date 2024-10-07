@@ -135,3 +135,15 @@
     justify-content: bottom;
     align-items: center;
 }
+
+#NavbarHelperCloser {
+    color: var(--text-color);
+}
+
+#NavbarHelper i {
+    color: var(--text-color);
+}
+
+.iconbutton {
+    color: var(--text-color);
+}

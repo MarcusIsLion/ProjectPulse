@@ -11,10 +11,40 @@ footer {
     background-color: var(--background-color-body);
 }
 
+.SelectTheme {
+    max-height: 150px; /* Ajustez cette valeur selon vos besoins */
+    overflow-y: auto; /* Active le défilement vertical */
+    display: block; /* Assurez-vous que le select se comporte comme un bloc */
+}
+
 #FooterForm {
     display: flex;
-    justify-content: right;
+    justify-content: flex-start; /* Aligne le contenu à droite */
     align-items: center;
-    width: auto;
-    margin-bottom: 17px;
+    width: 80%; /* Prend toute la largeur disponible */
+    max-width: 200px; /* Limite la largeur maximale si nécessaire */
+    margin: 0 0 30px 0; /* Centre le formulaire horizontalement */
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+}
+
+#FooterForm select {
+    padding: 8px 12px; /* Espace interne pour le confort */
+    border: 1px solid var(--primary-blue); /* Bordure cohérente */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: var(--card-background-color); /* Couleur de fond */
+    color: var(--text-color); /* Couleur du texte */
+    font-size: 1em; /* Taille de police adaptée */
+    cursor: pointer; /* Curseur changeant pour indiquer l'interaction */
+    transition: background-color 0.3s ease; /* Transition douce pour les interactions */
+    max-height: calc(
+        10 * 1.5em
+    ); /* Limiter la hauteur à 10 éléments (1.5em par élément) */
+    overflow-y: auto; /* Activer le défilement vertical */
+}
+
+#FooterForm select:hover {
+    background-color: var(
+        --background-color-body
+    ); /* Change la couleur au survol */
+    color: var(--text-color); /* Change le texte au survol */
 }

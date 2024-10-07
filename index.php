@@ -120,18 +120,56 @@ $localData = getJsonFromFile("data/version.json");
     <footer>
         <div class="BottomButton">
             <div class="StartBottomButton">
+                <?php
+                // Lire le fichier CSS
+                $cssFile = 'css/theme.css';
+
+                // Fonction pour extraire les classes CSS qui contiennent 'theme'
+                function extractThemes($file)
+                {
+                    $themes = [];
+                    if (file_exists($file)) {
+                        $cssContent = file_get_contents($file);
+
+                        // Rechercher les classes de type .themeClass (adaptation à votre fichier)
+                        preg_match_all('/\.([a-zA-Z0-9-_]+)\s*\{/', $cssContent, $matches);
+
+                        $themes[] = 'Light';
+                        // Filtrer uniquement les classes contenant 'theme' dans le nom
+                        foreach ($matches[1] as $className) {
+                            $themes[] = $className;
+                        }
+                    }
+                    return $themes;
+                }
+
+                // Extraire les thèmes depuis le fichier CSS
+                $themes = extractThemes($cssFile);
+
+                // Valeur sélectionnée dans $localData
+                $selectedTheme = $localData['theme'] ?? '';
+
+                ?>
+
                 <div id="FooterForm">
                     <form id="themeForm" method="post">
                         <select name="theme" id="theme" class="SelectTheme">
-                            <option value="light" <?= $localData["theme"] == "light" ? "selected" : "" ?>>Light</option>
-                            <option value="dark" <?= $localData["theme"] == "dark" ? "selected" : "" ?>>Dark</option>
+                            <?php
+                            // Générer les options dynamiquement
+                            foreach ($themes as $theme) {
+                                $isSelected = ($theme == $selectedTheme) ? 'selected' : '';
+                                echo "<option value=\"$theme\" $isSelected>" . ucfirst(str_replace('-', ' ', $theme)) . "</option>";
+                            }
+                            ?>
                         </select>
                     </form>
                 </div>
-                <div id="GitHubIssueDiv"><a href="https://github.com/MarcusIsLion/ProjectPulse/issues/new" target="_blank" class="IssueBadge"><img src="https://img.shields.io/badge/issue-error-red?logo=x-circle" alt="badge to acces to the issue form" /></a></div>
+
+                <div id=" GitHubIssueDiv"><a href="https://github.com/MarcusIsLion/ProjectPulse/issues/new" target="_blank" class="IssueBadge"><img src="https://img.shields.io/badge/issue-error-red?logo=x-circle" alt="badge to acces to the issue form" /></a>
+                </div>
             </div>
             <div class="CenterBottomButton">
-                <a href="page/CreateNewProject.php" class="button GeneralButton">Create a new project</a>
+                <a href="page/CreateNewProject.php" class="button GeneralButton">Create a new project <i class="fa-solid fa-plus"></i></a>
 
                 <a class="button SecretManager GeneralButton smooth-link" href="#HiddenCardGrid">See hidden projects <i class="fa-solid fa-eye"></i></a>
             </div>

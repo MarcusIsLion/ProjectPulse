@@ -48,3 +48,227 @@
     --black-low-opacity: rgba(255, 255, 255, 0.1);
     /* end of standard colors */
 }
+
+.hightContrast {
+    /* High Contrast Theme */
+    --background-color-body: #000;
+    --card-background-color: #706d6d39;
+    --text-color: #fff;
+    --primary-blue: #00f;
+    --shadow-color: rgba(255, 255, 255, 0.5);
+    --primary-purple: #800080;
+    --delete-button-color: #ff0000;
+    --stop-color: #ff0000;
+    --standby-color: #ffff00;
+    --development-color: #00ff00;
+    --finished-color: #00ffff;
+    --update-badge-color: #ff8000;
+}
+
+.pastel {
+    /* Pastel Theme */
+    --background-color-body: #f0f4f8;
+    --card-background-color: #ffffff;
+    --text-color: #333;
+    --primary-blue: #81b1e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-purple: #c9a0de;
+    --delete-button-color: #e57d7d;
+    --stop-color: #da6262;
+    --standby-color: #d4a35a;
+    --development-color: #96dd98;
+    --finished-color: #8fe6f1;
+    --update-badge-color: #ed9175;
+}
+
+.nature {
+    /* Nature Theme */
+    --background-color-body: #e8f5e9;
+    --card-background-color: #ffffff;
+    --text-color: #2e7d32;
+    --primary-blue: #90caf9;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-purple: #ce93d8;
+    --delete-button-color: #e57373;
+    --stop-color: #f44336;
+    --standby-color: #ffb300;
+    --development-color: #81c784;
+    --finished-color: #4db6ac;
+    --update-badge-color: #ff8a65;
+}
+
+.ocean {
+    /* Ocean Theme */
+    --background-color-body: #e1f5fe;
+    --card-background-color: #ffffff;
+    --text-color: #0277bd;
+    --primary-blue: #4fc3f7;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-purple: #ba68c8;
+    --delete-button-color: #ef5350;
+    --stop-color: #d32f2f;
+    --standby-color: #ffb74d;
+    --development-color: #81d4fa;
+    --finished-color: #80deea;
+    --update-badge-color: #ffab40;
+}
+
+.earth {
+    /* Earth Theme */
+    --background-color-body: #fbe9e7;
+    --card-background-color: #ffffff;
+    --text-color: #6d4c41;
+    --primary-blue: #90caf9;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-purple: #ce93d8;
+    --delete-button-color: #ef5350;
+    --stop-color: #c62828;
+    --standby-color: #ffb74d;
+    --development-color: #a5d6a7;
+    --finished-color: #80cbc4;
+    --update-badge-color: #ffcc80;
+}
+
+.sand {
+    /* Sand Theme */
+    --background-color-body: #fff3e0;
+    --card-background-color: #ffffff;
+    --text-color: #8d6e63;
+    --primary-blue: #90caf9;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-purple: #bcaaa4;
+    --delete-button-color: #e57373;
+    --stop-color: #d32f2f;
+    --standby-color: #ffb300;
+    --development-color: #dce775;
+    --finished-color: #64b5f6;
+    --update-badge-color: #ff8a65;
+}
+
+.minimalist {
+    /* Minimalist Theme */
+    --background-color-body: #f5f5f5;
+    --card-background-color: #ffffff;
+    --text-color: #212121;
+    --primary-blue: #2196f3;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --primary-purple: #9c27b0;
+    --delete-button-color: #f44336;
+    --stop-color: #e91e63;
+    --standby-color: #ffc107;
+    --development-color: #8bc34a;
+    --finished-color: #00bcd4;
+    --update-badge-color: #ff9800;
+}
+
+.eyeProtector {
+    /* EyeProtector Dark Theme */
+    --background-color-body: #1e1e1e; /* Fond sombre */
+    --card-background-color: #2a2a2a; /* Fond des cartes légèrement plus clair */
+    --text-color: #e0e0e0; /* Couleur du texte claire pour un bon contraste */
+    --primary-blue: #6ab7ff; /* Bleu doux */
+    --shadow-color: rgba(255, 255, 255, 0.2); /* Ombres légères */
+    --primary-purple: #a78bca; /* Violet doux */
+    --delete-button-color: #ff6f61; /* Rouge doux pour les boutons de suppression */
+    --stop-color: #ff4c4c; /* Couleur d'arrêt douce */
+    --standby-color: #ffcc80; /* Couleur d'attente douce */
+    --development-color: #80e27e; /* Couleur de développement apaisante */
+    --finished-color: #4dd0e1; /* Couleur de finition douce */
+    --update-badge-color: #ffd54f; /* Couleur de badge d'update douce */
+}
+
+.neon {
+    /* Neon Theme */
+    --background-color-body: #0d0d0d; /* Fond sombre pour faire ressortir les néons */
+    --card-background-color: #1a1a1a; /* Fond des cartes sombre */
+    --text-color: #ffffff; /* Texte blanc pour un bon contraste */
+    --primary-blue: #00ffff; /* Cyan néon */
+    --shadow-color: rgba(0, 255, 255, 0.3); /* Ombres turquoise */
+    --primary-purple: #ff00ff; /* Magenta néon */
+    --delete-button-color: #ff4d4d; /* Rouge néon pour les boutons de suppression */
+    --stop-color: #ff3333; /* Couleur d'arrêt néon */
+    --standby-color: #ffcc00; /* Jaune néon */
+    --development-color: #66ff66; /* Vert néon */
+    --finished-color: #00ff99; /* Vert menthe néon */
+    --update-badge-color: #ffccff; /* Violet doux néon */
+}
+
+.vintage {
+    /* Vintage Theme */
+    --background-color-body: #f4e1d6; /* Fond crème */
+    --card-background-color: #ffffff; /* Fond des cartes blanc cassé */
+    --text-color: #4b3c3c; /* Texte brun foncé */
+    --primary-blue: #7e9b9a; /* Bleu délavé */
+    --shadow-color: rgba(0, 0, 0, 0.2); /* Ombres douces */
+    --primary-purple: #a77b7d; /* Rose vieilli */
+    --delete-button-color: #d75151; /* Rouge vieilli */
+    --stop-color: #c94c4c; /* Couleur d'arrêt vieillie */
+    --standby-color: #e6ae57; /* Jaune moutarde */
+    --development-color: #9dbf89; /* Vert doux */
+    --finished-color: #63c6d2; /* Aqua pâle */
+    --update-badge-color: #ffb74d; /* Orange doux */
+}
+
+.earthScene {
+    /* Terre de Sienne Theme */
+    --background-color-body: #e4c2b2; /* Fond terre cuite */
+    --card-background-color: #ffffff; /* Fond des cartes blanc */
+    --text-color: #3b2b20; /* Texte brun foncé */
+    --primary-blue: #9e7b6a; /* Bleu terre */
+    --shadow-color: rgba(0, 0, 0, 0.15); /* Ombres légères */
+    --primary-purple: #b8998f; /* Mauve doux */
+    --delete-button-color: #d9534f; /* Rouge terre */
+    --stop-color: #c9302c; /* Couleur d'arrêt terre */
+    --standby-color: #f0ad4e; /* Jaune terre */
+    --development-color: #5cb85c; /* Vert terre */
+    --finished-color: #5bc0de; /* Aqua terre */
+    --update-badge-color: #f7b7a3; /* Rose doux */
+}
+
+.futuristic {
+    /* Futuristic Theme */
+    --background-color-body: #0a0a0a; /* Fond noir */
+    --card-background-color: #1c1c1c; /* Fond des cartes gris foncé */
+    --text-color: #e0e0e0; /* Texte gris clair */
+    --primary-blue: #00bcd4; /* Cyan futuriste */
+    --shadow-color: rgba(255, 255, 255, 0.2); /* Ombres blanches */
+    --primary-purple: #6200ea; /* Violet futuriste */
+    --delete-button-color: #ff1744; /* Rouge vif */
+    --stop-color: #f44336; /* Couleur d'arrêt vif */
+    --standby-color: #ffeb3b; /* Jaune vif */
+    --development-color: #76ff03; /* Vert vif */
+    --finished-color: #00e676; /* Vert menthe vif */
+    --update-badge-color: #ff9100; /* Orange vif */
+}
+
+.deepOcean {
+    /* Deep Ocean Theme */
+    --background-color-body: #001f3f; /* Fond bleu nuit */
+    --card-background-color: #003366; /* Fond des cartes bleu marine */
+    --text-color: #ffffff; /* Texte blanc */
+    --primary-blue: #00bfff; /* Bleu océan */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Ombres douces */
+    --primary-purple: #8600e6; /* Violet profond */
+    --delete-button-color: #ff4500; /* Rouge orangé */
+    --stop-color: #ff6347; /* Couleur d'arrêt tomate */
+    --standby-color: #ffa500; /* Jaune orangé */
+    --development-color: #32cd32; /* Vert lime */
+    --finished-color: #1e90ff; /* Bleu ciel vif */
+    --update-badge-color: #ff1493; /* Rose vif */
+}
+
+.softPastel {
+    /* Soft Pastel Theme */
+    --background-color-body: #fce4ec; /* Fond rose pâle */
+    --card-background-color: #ffffff; /* Fond des cartes blanc */
+    --text-color: #333333; /* Texte gris foncé */
+    --primary-blue: #80deea; /* Bleu pastel */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Ombres douces */
+    --primary-purple: #977ec5; /* Violet pastel */
+    --delete-button-color: #ff8a80; /* Rouge pastel */
+    --stop-color: #ff5252; /* Couleur d'arrêt pastel */
+    --standby-color: #ffe57f; /* Jaune pastel */
+    --development-color: #a5d6a7; /* Vert pastel */
+    --finished-color: #b2ebf2; /* Aqua pastel */
+    --update-badge-color: #ffcc80; /* Orange pastel */
+}

@@ -6,7 +6,6 @@
     margin-bottom: 30px;
     transition: all 0.3s ease;
 }
-
 .card {
     position: relative;
     background-color: var(--card-background-color);
@@ -23,23 +22,35 @@
     transition: all 0.3s ease;
 }
 
+.logo-background {
+    position: absolute;
+    top: 50%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
+    width: 90%; /* Ajustez la largeur si nécessaire */
+    height: 90%; /* Ajustez la hauteur si nécessaire */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1; /* Ajustez si nécessaire pour plus de visibilité */
+    z-index: 1; /* S'assurer qu'il est en dessous du contenu */
+    transform: translate(-50%, -50%); /* Centrer le logo */
+    filter: blur(6px); /* Flou pour un effet de fond */
+}
+
+.CardContent {
+    position: relative; /* Nécessaire pour le z-index */
+    z-index: 2; /* S'assure que le contenu est au-dessus du logo */
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    height: 100%;
+}
+
 .CardContent a.button {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Logo place at the background of the card */
-.logo-background {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.1;
-    z-index: 1;
-    filter: blur(6px);
 }
 
 .card:hover {
@@ -48,20 +59,9 @@
     height: 100%;
 }
 
-/* Style of the content of the card */
-.CardContent {
-    z-index: 2;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    height: 100%;
-}
-
 .card h2 {
     font-size: 1.5em;
-    color: var(--black);
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
