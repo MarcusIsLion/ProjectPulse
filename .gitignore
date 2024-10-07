@@ -1,3 +1,5 @@
-/Projects
+Projects/*
 type.json
 data/projectstructure.json
+
+!Projects/index.php
