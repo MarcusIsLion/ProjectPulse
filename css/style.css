@@ -39,7 +39,7 @@
 .Separator {
     margin-top: 20px;
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--primary-purple);
+    border-bottom: 3px solid var(--separator-color);
 }
 /* End of the style of all separators */
 

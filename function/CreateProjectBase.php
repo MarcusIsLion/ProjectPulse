@@ -1,6 +1,6 @@
 <?php
 
-include_once("getJsonFromFile.php");
+require_once("getJsonFromFile.php");
 require_once("CreateJsonFile.php");
 
 function CreateFile($projectDirectory, $folder, $file)
@@ -41,19 +41,23 @@ function CreateFolder($projectDirectory, $folder)
     }
 }
 
-function CreateProjectBase($projectLanguageId, $projectName, $projectType, $projectDirectory, $projectVisual)
+function CreateProjectBase($ProjectStructureId, $projectType, $projectDirectory, $projectVisual)
 {
     // Récupérer la liste des langues du fichier enum
     $JsonFile = getJsonFromFile("../data/enum/ProjectLanguage.json");
 
-    // Récupérer la langue à partir de l'ID
-    $projectLanguage = $JsonFile[$projectLanguageId];
 
+    // Récupérer la langue à partir de l'ID
+    foreach ($JsonFile as $key => $value) {
+        if ($value["id"] === $ProjectStructureId) {
+            $ProjectStructure = $value;
+        }
+    }
     // Créer le répertoire du projet
     mkdir($projectDirectory);
 
     // Créer les fichiers et dossiers du projet
-    foreach ($projectLanguage["FolderNedded"] as $folderKey => $folder) {
+    foreach ($ProjectStructure["FolderNedded"] as $folderKey => $folder) {
         // Si le dossier est "base", on ne le crée pas mais on crée son contenu
         if ($folderKey === "base") {
             // Créer les sous-dossiers et fichiers à l'intérieur de "base" sans créer le dossier "base"
@@ -69,5 +73,5 @@ function CreateProjectBase($projectLanguageId, $projectName, $projectType, $proj
             CreateFolder($projectDirectory, $folder);
         }
     }
-    createJsonFile($projectDirectory, $projectType, "Development", $projectVisual, $projectLanguage["language"]);
+    createJsonFile($projectDirectory, $projectType, "Development", $projectVisual, $ProjectStructure["language"]);
 }

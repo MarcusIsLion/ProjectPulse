@@ -23,12 +23,12 @@ function updateProgressBar() {
         progressBar.innerText = `${projectsCompleted}/${NumberOfProjects}`;
     } else {
         // Si la largeur est supérieure ou égale à 120px, afficher un texte complet
-        progressBar.innerText = `Charging all projects: ${projectsCompleted}/${NumberOfProjects}`;
+        progressBar.innerText = `Loading all projects: ${projectsCompleted}/${NumberOfProjects}`;
     }
 
     if (progressPercentage === 100) {
         progressBar.style.backgroundColor = "#02bd02";
-        progressBar.innerText = "Charging completed, great development !";
+        progressBar.innerText = "Loading completed, great development !";
         setTimeout(() => {
             const progressBarContainer = document.getElementById(
                 "ProgressBarContener"
@@ -47,6 +47,13 @@ async function loadCards() {
             throw new Error("Network response was not ok");
         }
         const cards = await response.json();
+
+        // je retire de "cards" tous les fichiers et je garde que les dossiers
+        for (const key in cards) {
+            if (cards[key].includes(".")) {
+                delete cards[key];
+            }
+        }
 
         // On récupère le nombre de cartes à créer
         NumberOfProjects = Object.keys(cards).length;
@@ -73,15 +80,28 @@ async function displayCards(cards) {
         const responseJsonFile = await fetch(
             `function/GetJsonFromFile2.php?path=../Projects/${cardName}/type.json`
         );
+
         const jsonAwait = await responseJsonFile.text();
-        const responsePhp = await fetch(
-            `includes/card.php?folder=${cardName}&full_path=../Projects/${cardName}&LanguageIdPopover=${
-                index + 1
-            }&typeData=${jsonAwait}`
-        );
+
+        const responsePhp = await fetch("includes/card.php", {
+            method: "POST",
+            body: JSON.stringify({
+                folder: cardName,
+                full_path: `../Projects/${cardName}`,
+                LanguageIdPopover: index + 1,
+                typeData: jsonAwait,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
         if (!responsePhp.ok) {
+            const errorText = await responsePhp.text();
+            console.error("Error response:", errorText);
             throw new Error("Network response was not ok");
         }
+
         const cardHtml = await responsePhp.text();
 
         if (jsonAwait) {

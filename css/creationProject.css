@@ -1,0 +1,100 @@
+body {
+    display: flex; /* Ajout d'un affichage flex pour la direction */
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    margin: 0 20px; /* Simplification de la marge */
+    opacity: 0;
+    text-align: left;
+    transition: opacity 0.5s ease; /* Spécification de la transition */
+}
+
+.RegisterError {
+    font-size: 1.2em;
+    margin: 10px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.folder-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+#drop-zone {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px dashed var(--primary-purple);
+    padding: 20px;
+    /* Simplification de la marge */
+    margin: 20px 20px 100px;
+}
+
+.StructureAreaBuilder {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 20px 100px 20px 20px; /* Réduction des répétitions */
+    justify-content: center;
+    align-items: center;
+}
+
+.draggable-items {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.draggable, .dropped-item, .folder, .file {
+    background-color: var(--background-color-body);
+    width: 90%;
+}
+
+.draggable {
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.dropped-item {
+    padding: 5px;
+    border: 1px solid var(--card-border-color);
+    margin: 10px 0 10px 20px;
+    position: relative;
+}
+
+.delete-button {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background-color: var(--red);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: var(--red); /* Aucun changement, mais peut être ajusté pour une meilleure visibilité */
+}
+
+h3 {
+    border-color: var(--primary-purple);
+    color: var(--text-color);
+}

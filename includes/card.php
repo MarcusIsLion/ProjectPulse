@@ -79,11 +79,14 @@ class card implements ICard
     {
         $folders = ['img', 'images', 'image'];
         $extensions = ['png', 'jpeg', 'jpg', 'gif'];
+        $names = ['logo', 'Logo', 'LOGO', 'icon', 'Icon', 'ICON'];
         foreach ($folders as $folder) {
             foreach ($extensions as $ext) {
-                $logoPath = "$basePath/$folder/logo.$ext";
-                if (file_exists($logoPath)) {
-                    return $logoPath;
+                foreach ($names as $name) {
+                    $logoPath = "$basePath/$folder/$name.$ext";
+                    if (file_exists($logoPath)) {
+                        return $logoPath;
+                    }
                 }
             }
         }
@@ -250,7 +253,12 @@ class card implements ICard
     }
     #endregion
 }
+// Lire le corps de la requête
+$data = json_decode(file_get_contents('php://input'), true);
 
-$card = new Card($_GET["folder"], $_GET["full_path"], intval($_GET["LanguageIdPopover"]), $_GET["typeData"]);
-
-echo $card->__toString();
+if ($data) {
+    $card = new Card($data["folder"], $data["full_path"], intval($data["LanguageIdPopover"]), $data["typeData"]);
+    echo $card->__toString();
+} else {
+    echo "Aucune donnée reçue.";
+}

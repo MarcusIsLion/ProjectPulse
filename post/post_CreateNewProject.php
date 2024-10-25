@@ -11,8 +11,14 @@ $projectDirectory = '../Projects/' . $projectName;
 include_once("../function/CreateProjectBase.php");
 
 // Create the project
-CreateProjectBase($projectLanguage, $projectName, $projectType, $projectDirectory, $projectVisual);
+try {
+    CreateProjectBase($projectLanguage, $projectType, $projectDirectory, $projectVisual);
+    // Redirect to the project page
+    header('Location: ../Projects/' . $projectName);
+    exit;
+} catch (Exception $e) {
+    echo $e->getMessage();
+    exit;
+}
 
-// Redirect to the project page
-header('Location: ../Projects/' . $projectName);
 exit;

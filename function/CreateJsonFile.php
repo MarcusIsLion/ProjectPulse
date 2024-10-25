@@ -4,13 +4,12 @@ function createJsonFile($projectDirectory, $projectType, $projectState, $project
 {
     try {
         $projectJson = array(
-            "type" => $projectType,
-            "state" => $projectState,
-            "visual" => $projectVisual,
-            "language" => $projectLanguage,
+            "type" => htmlspecialchars($projectType),
+            "state" => htmlspecialchars($projectState),
+            "visual" => htmlspecialchars($projectVisual),
+            "language" => htmlspecialchars($projectLanguage),
         );
         file_put_contents($projectDirectory . "/type.json", json_encode($projectJson));
-        header("Location: ../index.php");
     } catch (Exception $e) {
         throw new Exception("Error while creating the JSON file: " . $e->getMessage());
     }

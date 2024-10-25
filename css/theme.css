@@ -2,6 +2,8 @@
     /* standard colors for elements : */
     --background-color-body: #f5f7fa;
     --card-background-color: #fff;
+    --card-border-color: #e0e0e0;
+    --separator-color: #e0e0e0;
     --text-color: #333;
     --primary-blue: rgb(59, 130, 246);
     --shadow-color: rgba(0, 0, 0, 0.3);
@@ -30,6 +32,8 @@
     /* standard colors for elements : */
     --background-color-body: #333;
     --card-background-color: #272727;
+    --card-border-color: #fff;
+    --separator-color: #fff;
     --text-color: #fff;
     --primary-blue: rgb(59, 130, 246);
     --shadow-color: rgba(255, 255, 255, 0.3);
@@ -53,6 +57,8 @@
     /* High Contrast Theme */
     --background-color-body: #000;
     --card-background-color: #706d6d39;
+    --card-border-color: #fff;
+    --separator-color: #fff;
     --text-color: #fff;
     --primary-blue: #00f;
     --shadow-color: rgba(255, 255, 255, 0.5);
@@ -69,6 +75,8 @@
     /* Pastel Theme */
     --background-color-body: #f0f4f8;
     --card-background-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --separator-color: #e0e0e0;
     --text-color: #333;
     --primary-blue: #81b1e0;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -85,6 +93,8 @@
     /* Nature Theme */
     --background-color-body: #e8f5e9;
     --card-background-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --separator-color: #e0e0e0;
     --text-color: #2e7d32;
     --primary-blue: #90caf9;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -101,6 +111,8 @@
     /* Ocean Theme */
     --background-color-body: #e1f5fe;
     --card-background-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --separator-color: #e0e0e0;
     --text-color: #0277bd;
     --primary-blue: #4fc3f7;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -117,6 +129,8 @@
     /* Earth Theme */
     --background-color-body: #fbe9e7;
     --card-background-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --separator-color: #e0e0e0;
     --text-color: #6d4c41;
     --primary-blue: #90caf9;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -133,6 +147,8 @@
     /* Sand Theme */
     --background-color-body: #fff3e0;
     --card-background-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --separator-color: #e0e0e0;
     --text-color: #8d6e63;
     --primary-blue: #90caf9;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -149,6 +165,8 @@
     /* Minimalist Theme */
     --background-color-body: #f5f5f5;
     --card-background-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --separator-color: #e0e0e0;
     --text-color: #212121;
     --primary-blue: #2196f3;
     --shadow-color: rgba(0, 0, 0, 0.2);
@@ -165,6 +183,8 @@
     /* EyeProtector Dark Theme */
     --background-color-body: #1e1e1e; /* Fond sombre */
     --card-background-color: #2a2a2a; /* Fond des cartes légèrement plus clair */
+    --card-border-color: #00ffff; /* Bordure cyan */
+    --separator-color: #00ffff; /* Séparateur cyan */
     --text-color: #e0e0e0; /* Couleur du texte claire pour un bon contraste */
     --primary-blue: #6ab7ff; /* Bleu doux */
     --shadow-color: rgba(255, 255, 255, 0.2); /* Ombres légères */
@@ -181,6 +201,8 @@
     /* Neon Theme */
     --background-color-body: #0d0d0d; /* Fond sombre pour faire ressortir les néons */
     --card-background-color: #1a1a1a; /* Fond des cartes sombre */
+    --card-border-color: #00ffff; /* Bordure cyan néon */
+    --separator-color: #00ffff; /* Séparateur cyan néon */
     --text-color: #ffffff; /* Texte blanc pour un bon contraste */
     --primary-blue: #00ffff; /* Cyan néon */
     --shadow-color: rgba(0, 255, 255, 0.3); /* Ombres turquoise */
@@ -190,13 +212,15 @@
     --standby-color: #ffcc00; /* Jaune néon */
     --development-color: #66ff66; /* Vert néon */
     --finished-color: #00ff99; /* Vert menthe néon */
-    --update-badge-color: #ffccff; /* Violet doux néon */
+    --update-badge-color: #ff00ff; /* Violet doux néon */
 }
 
 .vintage {
     /* Vintage Theme */
     --background-color-body: #f4e1d6; /* Fond crème */
     --card-background-color: #ffffff; /* Fond des cartes blanc cassé */
+    --card-border-color: #e0e0e0; /* Bordure grise */
+    --separator-color: #e0e0e0; /* Séparateur gris */
     --text-color: #4b3c3c; /* Texte brun foncé */
     --primary-blue: #7e9b9a; /* Bleu délavé */
     --shadow-color: rgba(0, 0, 0, 0.2); /* Ombres douces */
@@ -213,6 +237,8 @@
     /* Terre de Sienne Theme */
     --background-color-body: #e4c2b2; /* Fond terre cuite */
     --card-background-color: #ffffff; /* Fond des cartes blanc */
+    --card-border-color: #e0e0e0; /* Bordure grise */
+    --separator-color: #e0e0e0; /* Séparateur gris */
     --text-color: #3b2b20; /* Texte brun foncé */
     --primary-blue: #9e7b6a; /* Bleu terre */
     --shadow-color: rgba(0, 0, 0, 0.15); /* Ombres légères */
@@ -229,6 +255,8 @@
     /* Futuristic Theme */
     --background-color-body: #0a0a0a; /* Fond noir */
     --card-background-color: #1c1c1c; /* Fond des cartes gris foncé */
+    --card-border-color: #e0e0e0; /* Bordure grise */
+    --separator-color: #e0e0e0; /* Séparateur gris */
     --text-color: #e0e0e0; /* Texte gris clair */
     --primary-blue: #00bcd4; /* Cyan futuriste */
     --shadow-color: rgba(255, 255, 255, 0.2); /* Ombres blanches */
@@ -245,6 +273,8 @@
     /* Deep Ocean Theme */
     --background-color-body: #001f3f; /* Fond bleu nuit */
     --card-background-color: #003366; /* Fond des cartes bleu marine */
+    --card-border-color: #00ffff; /* Bordure cyan */
+    --separator-color: #00ffff; /* Séparateur cyan */
     --text-color: #ffffff; /* Texte blanc */
     --primary-blue: #00bfff; /* Bleu océan */
     --shadow-color: rgba(0, 0, 0, 0.3); /* Ombres douces */
@@ -261,6 +291,8 @@
     /* Soft Pastel Theme */
     --background-color-body: #fce4ec; /* Fond rose pâle */
     --card-background-color: #ffffff; /* Fond des cartes blanc */
+    --card-border-color: #e0e0e0; /* Bordure grise */
+    --separator-color: #e0e0e0; /* Séparateur gris */
     --text-color: #333333; /* Texte gris foncé */
     --primary-blue: #80deea; /* Bleu pastel */
     --shadow-color: rgba(0, 0, 0, 0.1); /* Ombres douces */

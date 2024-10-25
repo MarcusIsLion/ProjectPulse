@@ -7,6 +7,7 @@ document.getElementById("theme").addEventListener("change", function () {
 
     //sauvegarder la sélection via une requête AJAX si nécessaire
     const xhr = new XMLHttpRequest();
+
     xhr.open("POST", "post/post_ChangeTheme.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send("theme=" + selectedTheme);
