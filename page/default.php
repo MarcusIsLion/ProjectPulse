@@ -29,6 +29,7 @@ $readmeFile = $baseProjectPath . "/README.md";
         <img src="../public/img/Logo.png" width="40px" height="40px" class="LogoTitle" />
         <h1 id="waveText"> <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>P</span><span>u</span><span>l</span><span>s</span><span>e</span></h1>
     </div>
+    <a class="button" href="../index.php">Retour</a>
     <h2>This is the default page, please make sure to create a "index.php" or "index.html" file at "<?= $baseProjectPath ?>" to see your own personal web page.</h2>
 
 
