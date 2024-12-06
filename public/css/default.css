@@ -1,0 +1,87 @@
+body {
+    flex-direction: column;
+}
+
+.readme-box {
+    border: 1px solid var(--primary-purple);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: var(--background-color-secondary);
+    max-width: 50%;
+}
+.readme-box h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+.readme-content {
+    font-family: monospace;
+    white-space: pre-wrap; /* Conserve les retours à la ligne */
+    word-wrap: break-word;
+    color: var(--text-color);
+}
+
+.readme-content a {
+    color: var(--primary-blue);
+}
+
+#file-tree {
+    border: 1px solid var(--primary-purple);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--background-color-secondary);
+    margin-top: 20px;
+    max-width: 20%;
+    position: sticky;
+    top: 50px;
+    height: auto; /* Permet à l'élément de s'adapter à son contenu */
+    max-height: 70vh; /* Limite la hauteur à 80% de la hauteur de la fenêtre (optionnel) */
+    overflow-y: auto; /* Ajoute une barre de défilement si le contenu dépasse */
+}
+
+/* Style des dossiers et fichiers */
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+li.folder > .folder-name::before {
+    content: "📁 "; /* Icône de dossier */
+}
+
+li.file > .file-name::before {
+    content: "📄 "; /* Icône de fichier */
+}
+
+/* Style pour les fichiers d'entrée */
+li.file.entry-point > a.file-name {
+    color: #28a745; /* Vert pour les fichiers d'entrée */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+li.file.entry-point > a.file-name:hover {
+    text-decoration: underline;
+}
+
+.folder .folder-name {
+    font-weight: bold;
+    color: var(--primay-blue);
+}
+
+.folder .folder-name:hover {
+    text-decoration: underline;
+}
+
+.RMBAndFTB {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}

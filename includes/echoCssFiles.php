@@ -1,9 +1,12 @@
 <?php
-function echoCssFiles($cssPath)
+function echoCssFiles(string $cssPath, array $cssFilesExclude = null)
 {
     $cssFiles = glob($cssPath . "*.css");
     foreach ($cssFiles as $cssFile) {
-        if (basename($cssFile) != "creationProject.css")
-            echo "<link rel=\"stylesheet\" href=\"$cssFile\" />\n";
+        if ($cssFilesExclude !== null && in_array($cssFile, $cssFilesExclude)) {
+            continue;
+        } else {
+            echo "<link rel=\"stylesheet\" href=\"$cssFile\" />";
+        }
     }
 }

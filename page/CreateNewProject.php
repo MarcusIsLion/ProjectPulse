@@ -12,7 +12,7 @@ require_once("../includes/echoCssFiles.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Créer un nouveau projet local</title>
     <?php
-    echoCssFiles("../css/");
+    echoCssFiles("../public/css/", ["../public/css/default.css", "../public/css/cards.css", "../public/css/reset.css"]);
     ?>
 </head>
 

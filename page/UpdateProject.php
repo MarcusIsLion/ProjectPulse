@@ -21,7 +21,7 @@ $localData = getJsonFromFile("../data/version.json");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modifier le projet local</title>
     <?php
-    echoCssFiles("../css/");
+    echoCssFiles("../public/css/");
     ?>
 </head>
 

@@ -12,7 +12,7 @@ $localData = getJsonFromFile("../data/version.json");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create a new json file</title>
     <?php
-    echoCssFiles("../css/");
+    echoCssFiles("../public/css/");
     ?>
 </head>
 

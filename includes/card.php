@@ -236,7 +236,19 @@ class card implements ICard
         </ul>';
 
         $html .= '<div class="CardButtonSection">';
-        $html .= '<a href="' . htmlspecialchars($full_path, ENT_QUOTES) . '" class="button">Open this project</a>';
+
+        if (is_dir($full_path)) {
+            $projectIndex = $full_path . '/index.php';
+
+            if (file_exists($projectIndex)) {
+                $html .= '<a href="' . htmlspecialchars($full_path, ENT_QUOTES) . '" class="button">Open this project</a>';
+            } else {
+                $html .= '<a href="page/default.php?FullPath= ' . $full_path . '" class="button">Open this project</a>';
+            }
+        } else {
+            $html .= '<a href="#" class="button">Something go wrong, the project is unrechable</a>';
+        }
+
         $html .= '<a href="page/UpdateProject.php?ProjectName=' . htmlspecialchars($full_path, ENT_QUOTES) . '" class="button">Update these characteristics</a>';
         $html .= '</div></div></div>';
 

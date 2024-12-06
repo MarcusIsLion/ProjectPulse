@@ -12,7 +12,7 @@ $localData = getJsonFromFile("../data/version.json");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download more structure</title>
     <?php
-    echoCssFiles("../css/");
+    echoCssFiles("../public/css/");
     ?>
 </head>
 
@@ -99,7 +99,7 @@ $localData = getJsonFromFile("../data/version.json");
         <button id="CreateNewStructure" type="button" class="button ValidationCreation">Create a new structure</button>
         <button id="cancelButton" type="button" class="button ValidationCreation">Cancel</button>
     </div>
-    <script src="../js/DownloadStrucutrePageGestion.js"></script>
+    <script src="../public/js/DownloadStrucutrePageGestion.js"></script>
 </body>
 
 </html>

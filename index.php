@@ -13,10 +13,10 @@ $localData = getJsonFromFile("data/version.json");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProjectPulse : Home</title>
     <?php
-    echoCssFiles("css/");
+    echoCssFiles("public/css/", ["public/css/creationProject.css", "public/css/default.css"]);
     ?>
-    <link rel="icon" href="img/Logo.png" />
-    <link rel="apple-touch-icon" href="img/Logo.png" />
+    <link rel="icon" href="public/img/Logo.png" />
+    <link rel="apple-touch-icon" href="public/img/Logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -42,7 +42,7 @@ $localData = getJsonFromFile("data/version.json");
     <div id="Hidder" class="hidden"></div>
     <div class="container">
         <div id="VersionBadgeDiv"><a href="https://github.com/MarcusIsLion/ProjectPulse" target="_blank" class="UpdateBadge"><img src="https://img.shields.io/badge/ProjectPulse%20has%20a%20new%20update%20available-20B2AA?style=for-the-badgebadge" alt="An update is availible" /></a></div>
-        <div id="NoInternetDiv"><img src="img/NoInternet.png" alt="No internet image" class="NoInternet" /></div>
+        <div id="NoInternetDiv"><img src="public/img/NoInternet.png" alt="No internet image" class="NoInternet" /></div>
         <?php
         if (isset($_GET['GitFolder'])) {
             generateAlertBox("A \".git\" folder has been found and can't be delete automaticly. Please delete it manualy.", "error", "index.php");
@@ -57,7 +57,7 @@ $localData = getJsonFromFile("data/version.json");
                 </div>
             </div>
             <div class="CenterSectionTopGrid">
-                <img src="img/Logo.png" width="40px" height="40px" class="LogoTitle" />
+                <img src="public/img/Logo.png" width="40px" height="40px" class="LogoTitle" />
                 <h1 id="waveText"> <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>P</span><span>u</span><span>l</span><span>s</span><span>e</span></h1>
             </div>
             <div class="RightSectionTopGrid">
@@ -122,7 +122,7 @@ $localData = getJsonFromFile("data/version.json");
             <div class="StartBottomButton">
                 <?php
                 // Lire le fichier CSS
-                $cssFile = 'css/theme.css';
+                $cssFile = 'public/css/theme.css';
 
                 // Fonction pour extraire les classes CSS qui contiennent 'theme'
                 function extractThemes($file)
@@ -179,14 +179,14 @@ $localData = getJsonFromFile("data/version.json");
         </div>
     </footer>
 
-    <script src="js/HiddenElementGestion.js"></script>
-    <script src="js/WavingTextJS.js"></script>
-    <script src="js/CardDisplayManagment.js"></script>
-    <script src="js/CheckInternetConnection.js"></script>
-    <script src="js/SmoothScrool.js"></script>
-    <script src="js/ThemeGestion.js"></script>
-    <script src="js/ResearchBar.js"></script>
-    <script src="js/NavBarHelperGestion.js"></script>
+    <script src="public/js/HiddenElementGestion.js"></script>
+    <script src="public/js/WavingTextJS.js"></script>
+    <script src="public/js/CardDisplayManagment.js"></script>
+    <script src="public/js/CheckInternetConnection.js"></script>
+    <script src="public/js/SmoothScrool.js"></script>
+    <script src="public/js/ThemeGestion.js"></script>
+    <script src="public/js/ResearchBar.js"></script>
+    <script src="public/js/NavBarHelperGestion.js"></script>
 </body>
 
 </html>
