@@ -209,9 +209,6 @@ Voici les améliorations prévues pour la prochaine version.
 
 <ul>
 <li>
-🐛 le thème ne se sauvegarde pas dans la default page.
-</li>
-<li>
 🔨 initialisation des tests.
 </li>
 <li>
@@ -250,6 +247,8 @@ Voici les améliorations prévues pour la prochaine version.
 <li>
 📝 Refonte du README. 
 </li>
+<li>
+🐛 le thème ne se sauvegarde pas dans la default page.
 </li>
 </ul>
 
